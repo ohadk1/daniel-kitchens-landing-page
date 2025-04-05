@@ -1,0 +1,55 @@
+
+import { ArrowLeft } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <section id="home" className="relative h-screen">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 bg-black">
+        <div 
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705')] bg-cover bg-center bg-no-repeat opacity-60"
+        ></div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative h-full flex flex-col justify-center items-center text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center animate-fade-in">
+          <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-32 mx-auto mb-6" />
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">מטבחי יוקרה בעבודת נגרות</h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            מעל 25 שנות ניסיון בתכנון וייצור מטבחים באיכות הגבוהה ביותר, 
+            המשלבים עיצוב מודרני, פונקציונליות וחומרים מעולים
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="#gallery" 
+              className="bg-white text-kitchen-DEFAULT hover:bg-kitchen-light px-8 py-3 rounded-md text-lg font-medium flex items-center"
+            >
+              לגלריה שלנו
+              <ArrowLeft className="mr-2 rtl:rotate-180" size={20} />
+            </a>
+            <a 
+              href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium"
+            >
+              לקבלת הצעת מחיר
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+        <a href="#gallery" className="animate-bounce">
+          <svg className="w-6 h-6 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
