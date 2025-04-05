@@ -1,14 +1,9 @@
-
 import { ArrowLeft } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section id="home" className="relative h-screen">
+  return <section id="home" className="relative h-screen">
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-black">
-        <div 
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705')] bg-cover bg-center bg-no-repeat opacity-60"
-        ></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705')] bg-cover bg-center bg-no-repeat opacity-60"></div>
       </div>
       
       {/* Content */}
@@ -21,19 +16,8 @@ const Hero = () => {
             המשלבים עיצוב מודרני, פונקציונליות וחומרים מעולים
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#gallery" 
-              className="bg-white text-kitchen-DEFAULT hover:bg-kitchen-light px-8 py-3 rounded-md text-lg font-medium flex items-center"
-            >
-              לגלריה שלנו
-              <ArrowLeft className="mr-2 rtl:rotate-180" size={20} />
-            </a>
-            <a 
-              href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium"
-            >
+            
+            <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium">
               לקבלת הצעת מחיר
             </a>
           </div>
@@ -48,8 +32,6 @@ const Hero = () => {
           </svg>
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
