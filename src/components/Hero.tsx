@@ -1,10 +1,9 @@
-
 import { ArrowLeft } from 'lucide-react';
 const Hero = () => {
   return <section id="home" className="relative h-screen">
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-black">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705')] bg-cover bg-center bg-no-repeat opacity-60"></div>
+        <div className="absolute inset-0 bg-[url('https://i.postimg.cc/x8yzXKfM/DSC00477.jpg')] bg-cover bg-center bg-no-repeat opacity-80"></div>
       </div>
       
       {/* Content */}
