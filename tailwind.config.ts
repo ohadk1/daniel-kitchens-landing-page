@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,9 +63,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				kitchen: {
-					DEFAULT: '#1A1F2C',
+					DEFAULT: '#C0B8A8',
 					light: '#F6F6F7',
-					accent: '#9b87f5',
+					accent: '#C0B8A8',
 					wood: '#8E6F4A',
 					gray: '#8E9196'
 				}
