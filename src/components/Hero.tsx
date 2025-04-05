@@ -1,3 +1,4 @@
+
 import { ArrowLeft } from 'lucide-react';
 const Hero = () => {
   return <section id="home" className="relative h-screen">
@@ -8,7 +9,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative h-full flex flex-col justify-center items-center text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center animate-fade-in">
+        <div className="text-center animate-fade-in mt-32">
           <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-32 mx-auto mb-6" />
           <h1 className="text-5xl md:text-6xl font-bold mb-6">ייצור מטבחים בעיצוב והתאמה אישית</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
@@ -33,3 +34,4 @@ const Hero = () => {
     </section>;
 };
 export default Hero;
+
