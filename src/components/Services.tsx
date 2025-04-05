@@ -1,5 +1,5 @@
 
-import { Hammer, Compass, Clock4, Tool, ShieldCheck, Truck } from 'lucide-react';
+import { Hammer, Compass, Clock4, Wrench, ShieldCheck, Truck } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -9,7 +9,7 @@ const Services = () => {
       description: "תכנון מקצועי והדמיות תלת-ממדיות להמחשת המטבח העתידי שלכם"
     },
     {
-      icon: <Tool className="text-kitchen-accent h-10 w-10" />,
+      icon: <Wrench className="text-kitchen-accent h-10 w-10" />,
       title: "ייצור מותאם אישית",
       description: "ייצור בהתאמה אישית לפי צרכיכם, במידות המדויקות ובסגנון המועדף עליכם"
     },
