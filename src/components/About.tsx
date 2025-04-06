@@ -6,7 +6,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6 text-zinc-700">אודות מטבחי דניאל</h2>
-            <p className="text-lg mb-6 leading-relaxed text-zinc-950">
+            <p className="text-lg mb-6 leading-relaxed text-zinc-950 bg-[c0b8a8] bg-transparent">
               מטבחי דניאל הוא עסק משפחתי עם מסורת ארוכה של נגרות איכותית המתמחה בייצור מטבחי יוקרה.
               הנגרייה שלנו הוקמה בשנת 1998 ומאז אנו מספקים מטבחים מעוצבים באיכות גבוהה ללא פשרות.
             </p>
