@@ -18,7 +18,7 @@ const About = () => {
             
             <h3 className="text-2xl font-semibold mb-4">למה לבחור במטבחי דניאל?</h3>
             <ul className="space-y-3">
-              {advantages.map((advantage, index) => <li key={index} className="flex items-start">
+              {advantages.map((advantage, index) => <li key={index} className="flex items-start text-slate-50">
                   <CheckCircle className="text-kitchen-accent mt-1 ml-2 flex-shrink-0" />
                   <span>{advantage}</span>
                 </li>)}
