@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const kitchenImages = [
   {
@@ -38,11 +39,37 @@ const kitchenImages = [
     alt: 'מטבח בסגנון סקנדינבי',
     title: 'מטבח סקנדינבי',
     description: 'קווים נקיים, צבעים בהירים וחומרים טבעיים בהשראה נורדית'
+  },
+  // More images that will be shown when "הצג עוד" is clicked
+  {
+    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+    alt: 'מטבח בסגנון רטרו',
+    title: 'מטבח רטרו',
+    description: 'עיצוב המשלב אלמנטים רטרו עם פונקציונליות מודרנית'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1600047509807-f8261a3f7538',
+    alt: 'מטבח עם פינת אוכל משולבת',
+    title: 'מטבח עם פינת אוכל',
+    description: 'פתרון מושלם למטבחים עם חלל משולב לאכילה'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1600563438938-a9a27215d8be',
+    alt: 'מטבח קלאסי',
+    title: 'מטבח קלאסי',
+    description: 'עיצוב אלגנטי עם פרטי נגרות מסורתיים'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858',
+    alt: 'מטבח קומפקטי',
+    title: 'מטבח קומפקטי',
+    description: 'ניצול חכם של חלל קטן עם פונקציונליות מירבית'
   }
 ];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -66,6 +93,10 @@ const Gallery = () => {
     }
   };
 
+  const handleShowMore = () => {
+    setVisibleCount(kitchenImages.length);
+  };
+
   return (
     <section id="gallery" className="py-20 bg-kitchen-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +106,7 @@ const Gallery = () => {
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {kitchenImages.map((image, index) => (
+          {kitchenImages.slice(0, visibleCount).map((image, index) => (
             <div 
               key={index}
               className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
@@ -94,6 +125,17 @@ const Gallery = () => {
           ))}
         </div>
         
+        {visibleCount < kitchenImages.length && (
+          <div className="text-center mt-12">
+            <Button 
+              onClick={handleShowMore}
+              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium"
+            >
+              הצג עוד
+            </Button>
+          </div>
+        )}
+
         <div className="text-center mt-12">
           <a 
             href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" 
