@@ -5,22 +5,19 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6 text-zinc-700">אודות מטבחי דניאל</h2>
-            <p className="text-lg mb-6 leading-relaxed text-zinc-950 bg-[c0b8a8] bg-transparent">
-              מטבחי דניאל הוא עסק משפחתי עם מסורת ארוכה של נגרות איכותית המתמחה בייצור מטבחי יוקרה.
-              הנגרייה שלנו הוקמה בשנת 1998 ומאז אנו מספקים מטבחים מעוצבים באיכות גבוהה ללא פשרות.
-            </p>
-            <p className="text-lg mb-8 leading-relaxed text-zinc-950">
+            
+            
+            <p className="text-lg mb-8 leading-relaxed">
               אנו מאמינים שהמטבח הוא לב הבית, ולכן אנו משקיעים את כל המאמצים בייצור מטבחים המשלבים 
               פונקציונליות, אסתטיקה וחדשנות. כל מטבח שאנו מייצרים מותאם באופן אישי לצרכי הלקוח,
               לסגנון העיצובי שלו ולמרחב המיועד.
             </p>
             
-            <h3 className="text-2xl font-semibold mb-4 text-zinc-950">למה לבחור במטבחי דניאל?</h3>
-            <ul className="space-y-3 bg-[c0b8a8] bg-[#bcb1a0]">
-              {advantages.map((advantage, index) => <li key={index} className="flex items-start bg-slate-950">
+            <h3 className="text-2xl font-semibold mb-4">למה לבחור במטבחי דניאל?</h3>
+            <ul className="space-y-3">
+              {advantages.map((advantage, index) => <li key={index} className="flex items-start">
                   <CheckCircle className="text-kitchen-accent mt-1 ml-2 flex-shrink-0" />
-                  <span className="text-zinc-950">{advantage}</span>
+                  <span>{advantage}</span>
                 </li>)}
             </ul>
           </div>
