@@ -1,31 +1,20 @@
-
 import { WhatsappIcon } from './Icons';
-
 const CallToAction = () => {
-  return (
-    <section 
-      className="relative py-20 bg-kitchen-wood text-white"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1600607687644-c7f34bc91088')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0,0,0,0.6)"
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50"></div>
+  return <section className="relative py-20 bg-kitchen-wood text-white" style={{
+    backgroundImage: "url('https://images.unsplash.com/photo-1600607687644-c7f34bc91088')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundBlendMode: "multiply",
+    backgroundColor: "rgba(0,0,0,0.6)"
+  }}>
+      <div className="absolute inset-0 bg-stone-500"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">מוכנים למטבח חלומותיכם?</h2>
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
           צרו איתנו קשר עוד היום לקבלת הצעת מחיר ללא התחייבות ותנו לנו להפוך את חלום המטבח שלכם למציאות
         </p>
         
-        <a 
-          href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-4 rounded-md text-xl font-medium"
-        >
+        <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-4 rounded-md text-xl font-medium">
           <WhatsappIcon className="ml-3" />
           לקבלת הצעת מחיר בוואטסאפ
         </a>
@@ -34,8 +23,6 @@ const CallToAction = () => {
           מענה מהיר, ייעוץ מקצועי, ללא התחייבות!
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CallToAction;
