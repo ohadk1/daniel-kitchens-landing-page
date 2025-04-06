@@ -1,18 +1,7 @@
-
 import { CheckCircle } from 'lucide-react';
-
 const About = () => {
-  const advantages = [
-    "מעל 25 שנות ניסיון בתכנון וייצור מטבחים",
-    "חומרים איכותיים העומדים בסטנדרטים הגבוהים ביותר",
-    "צוות נגרים מקצועי ומיומן",
-    "התאמה מושלמת לצרכי הלקוח ולחלל",
-    "ליווי אישי משלב התכנון ועד ההתקנה",
-    "שירות ואחריות ללא פשרות"
-  ];
-
-  return (
-    <section id="about" className="py-20 bg-kitchen-DEFAULT text-white">
+  const advantages = ["מעל 25 שנות ניסיון בתכנון וייצור מטבחים", "חומרים איכותיים העומדים בסטנדרטים הגבוהים ביותר", "צוות נגרים מקצועי ומיומן", "התאמה מושלמת לצרכי הלקוח ולחלל", "ליווי אישי משלב התכנון ועד ההתקנה", "שירות ואחריות ללא פשרות"];
+  return <section id="about" className="py-20 bg-kitchen-DEFAULT text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -29,22 +18,16 @@ const About = () => {
             
             <h3 className="text-2xl font-semibold mb-4">למה לבחור במטבחי דניאל?</h3>
             <ul className="space-y-3">
-              {advantages.map((advantage, index) => (
-                <li key={index} className="flex items-start">
+              {advantages.map((advantage, index) => <li key={index} className="flex items-start">
                   <CheckCircle className="text-kitchen-accent mt-1 ml-2 flex-shrink-0" />
                   <span>{advantage}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1556911073-38141963c9e0" 
-                alt="נגרייה מקצועית" 
-                className="w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1556911073-38141963c9e0" alt="נגרייה מקצועית" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 w-2/3 bg-kitchen-accent p-6 rounded-lg shadow-xl">
               <p className="text-lg font-bold">
@@ -55,8 +38,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
