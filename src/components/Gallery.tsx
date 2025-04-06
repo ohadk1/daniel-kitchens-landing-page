@@ -4,48 +4,48 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const kitchenImages = [{
-  url: 'https://images.unsplash.com/photo-1556911220-bff31c812dba',
-  alt: 'מטבח מודרני עם אי מרכזי',
+  url: 'https://i.postimg.cc/3xXwdrqp/IMG-5094.jpg',
+  alt: 'מטבח מודרני עם משטח אי',
   title: 'מטבח מודרני',
   description: 'מטבח בסגנון מודרני עם חזית לבנה וידיות נסתרות'
 }, {
-  url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c',
+  url: 'https://i.postimg.cc/JnKBx2B1/IMG-5093.jpg',
   alt: 'מטבח יוקרתי עם גימור עץ',
   title: 'מטבח בסגנון כפרי',
   description: 'שילוב של עץ אלון טבעי וצבע לבן בעיצוב כפרי מודרני'
 }, {
-  url: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1',
+  url: 'https://i.postimg.cc/HsMrzP8h/IMG-5091.jpg',
   alt: 'מטבח מינימליסטי',
   title: 'מטבח מינימליסטי',
   description: 'עיצוב נקי בקווים ישרים וצבעוניות מונוכרומטית'
 }, {
-  url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3',
+  url: 'https://i.postimg.cc/VkpkmTPv/IMG-5087.jpg',
   alt: 'מטבח בסגנון תעשייתי',
   title: 'מטבח תעשייתי',
   description: 'שילוב של מתכת, בטון וחומרים חשופים ליצירת מראה תעשייתי אותנטי'
 }, {
-  url: 'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4',
+  url: 'https://i.postimg.cc/0jCcrdnr/IMG-5086.jpg',
   alt: 'מטבח בהתאמה אישית',
   title: 'מטבח בהתאמה אישית',
   description: 'פתרון מותאם לחלל מאתגר עם פינות אחסון חכמות'
 }, {
-  url: 'https://images.unsplash.com/photo-1565183928294-7063f23ce0f8',
+  url: 'https://i.postimg.cc/CKsWLW3g/IMG-5085.jpg',
   alt: 'מטבח בסגנון סקנדינבי',
   title: 'מטבח סקנדינבי',
   description: 'קווים נקיים, צבעים בהירים וחומרים טבעיים בהשראה נורדית'
 }, {
   // Additional images that will be revealed when "Show More" is clicked
-  url: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+  url: 'https://i.postimg.cc/cJwvdDzK/IMG-5083.jpg',
   alt: 'מטבח מודרני עם אי',
   title: 'מטבח עם אי',
   description: 'מטבח מרווח עם אי מרכזי ופתרונות אחסון יצירתיים'
 }, {
-  url: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a',
+  url: 'https://i.postimg.cc/7LgpKBKR/IMG-5082.jpg',
   alt: 'מטבח כפרי מסורתי',
   title: 'מטבח כפרי',
   description: 'עיצוב חם ומזמין בסגנון כפרי עם חומרים טבעיים'
 }, {
-  url: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d',
+  url: 'https://i.postimg.cc/rwdD4nNC/IMG-5080.jpg',
   alt: 'מטבח מינימליסטי שחור',
   title: 'מטבח שחור',
   description: 'עיצוב אלגנטי בצבע שחור עם נגיעות של עץ טבעי'
