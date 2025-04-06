@@ -49,6 +49,12 @@ const kitchenImages = [{
   alt: 'מטבח מינימליסטי שחור',
   title: 'מטבח שחור',
   description: 'עיצוב אלגנטי בצבע שחור עם נגיעות של עץ טבעי'
+}, {
+  // New photos from the provided link
+  url: 'https://i.postimg.cc/ydTtsFDp/IMG-6951.jpg',
+  alt: 'עיצוב מטבח מודרני חדש',
+  title: 'מטבח מודרני חדש',
+  description: 'עיצוב מטבח מודרני עם משטחי עבודה איכותיים'
 }];
 
 const Gallery = () => {
