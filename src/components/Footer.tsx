@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="ml-2" />
-                <span>הפועלים 56, דימונה, ישראל</span>
+                <span>shimrit74@walla.co.il</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="ml-2 mt-1" />
