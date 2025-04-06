@@ -1,5 +1,8 @@
+
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Button } from './ui/button';
+
 const kitchenImages = [{
   url: 'https://images.unsplash.com/photo-1556911220-bff31c812dba',
   alt: 'מטבח מודרני עם אי מרכזי',
@@ -30,27 +33,54 @@ const kitchenImages = [{
   alt: 'מטבח בסגנון סקנדינבי',
   title: 'מטבח סקנדינבי',
   description: 'קווים נקיים, צבעים בהירים וחומרים טבעיים בהשראה נורדית'
+}, {
+  // Additional images that will be revealed when "Show More" is clicked
+  url: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9',
+  alt: 'מטבח מודרני עם אי',
+  title: 'מטבח עם אי',
+  description: 'מטבח מרווח עם אי מרכזי ופתרונות אחסון יצירתיים'
+}, {
+  url: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a',
+  alt: 'מטבח כפרי מסורתי',
+  title: 'מטבח כפרי',
+  description: 'עיצוב חם ומזמין בסגנון כפרי עם חומרים טבעיים'
+}, {
+  url: 'https://images.unsplash.com/photo-1466721591366-2d5fba72006d',
+  alt: 'מטבח מינימליסטי שחור',
+  title: 'מטבח שחור',
+  description: 'עיצוב אלגנטי בצבע שחור עם נגיעות של עץ טבעי'
 }];
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [visibleImages, setVisibleImages] = useState(6); // Initially show 6 images
+  
   const openLightbox = (index: number) => {
     setSelectedImage(index);
     document.body.style.overflow = 'hidden';
   };
+  
   const closeLightbox = () => {
     setSelectedImage(null);
     document.body.style.overflow = 'auto';
   };
+  
   const goToNext = () => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage + 1) % kitchenImages.length);
     }
   };
+  
   const goToPrev = () => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage - 1 + kitchenImages.length) % kitchenImages.length);
     }
   };
+  
+  const handleShowMore = () => {
+    setVisibleImages(kitchenImages.length); // Show all images when "Show More" is clicked
+  };
+
   return <section id="gallery" className="py-20 bg-kitchen-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
@@ -59,7 +89,7 @@ const Gallery = () => {
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {kitchenImages.map((image, index) => <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]" onClick={() => openLightbox(index)}>
+          {kitchenImages.slice(0, visibleImages).map((image, index) => <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]" onClick={() => openLightbox(index)}>
               <img src={image.url} alt={image.alt} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white text-xl font-semibold">{image.title}</h3>
@@ -69,9 +99,14 @@ const Gallery = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium inline-block">
-            רוצים מטבח כזה? דברו איתנו עכשיו
-          </a>
+          {visibleImages < kitchenImages.length && (
+            <Button 
+              onClick={handleShowMore}
+              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium"
+            >
+              הצג עוד
+            </Button>
+          )}
         </div>
       </div>
 
@@ -93,7 +128,9 @@ const Gallery = () => {
             </div>
           </div>
           
-          
+          <button onClick={goToNext} className="absolute right-4 text-white hover:text-kitchen-accent" aria-label="תמונה הבאה">
+            <ChevronRight size={40} />
+          </button>
         </div>}
     </section>;
 };
