@@ -1,12 +1,12 @@
 import { CheckCircle } from 'lucide-react';
 const About = () => {
   const advantages = ["מעל 25 שנות ניסיון בתכנון וייצור מטבחים", "חומרים איכותיים העומדים בסטנדרטים הגבוהים ביותר", "צוות נגרים מקצועי ומיומן", "התאמה מושלמת לצרכי הלקוח ולחלל", "ליווי אישי משלב התכנון ועד ההתקנה", "שירות ואחריות ללא פשרות"];
-  return <section id="about" className="py-20 bg-kitchen-DEFAULT text-white">
+  return <section id="about" className="py-20 bg-kitchen-DEFAULT text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6">אודות מטבחי דניאל</h2>
-            <p className="text-#000000 mb-1 leading-relaxed">
+            <p className="text-lg mb-6 leading-relaxed">
               מטבחי דניאל הוא עסק משפחתי עם מסורת ארוכה של נגרות איכותית המתמחה בייצור מטבחי יוקרה.
               הנגרייה שלנו הוקמה בשנת 1998 ומאז אנו מספקים מטבחים מעוצבים באיכות גבוהה ללא פשרות.
             </p>
@@ -18,7 +18,7 @@ const About = () => {
             
             <h3 className="text-2xl font-semibold mb-4">למה לבחור במטבחי דניאל?</h3>
             <ul className="space-y-3">
-              {advantages.map((advantage, index) => <li key={index} className="flex items-start">
+              {advantages.map((advantage, index) => <li key={index} className="flex items-start text-slate-50">
                   <CheckCircle className="text-kitchen-accent mt-1 ml-2 flex-shrink-0" />
                   <span>{advantage}</span>
                 </li>)}
