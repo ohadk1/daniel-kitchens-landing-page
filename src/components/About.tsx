@@ -20,7 +20,7 @@ const About = () => {
             <ul className="space-y-3">
               {advantages.map((advantage, index) => <li key={index} className="flex items-start text-slate-50">
                   <CheckCircle className="text-kitchen-accent mt-1 ml-2 flex-shrink-0" />
-                  <span>{advantage}</span>
+                  <span className="text-zinc-950">{advantage}</span>
                 </li>)}
             </ul>
           </div>
