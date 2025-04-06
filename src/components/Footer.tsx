@@ -1,6 +1,9 @@
+
 import { Phone, MapPin, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+
 const Footer = () => {
-  return <footer className="bg-kitchen-DEFAULT text-black rounded-none my-0 py-0 px-0">
+  return (
+    <footer className="bg-kitchen-DEFAULT text-white">
       <div className="max-w-7xl mx-auto pt-12 pb-6 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and About */}
@@ -76,7 +79,12 @@ const Footer = () => {
                 <span>שבת: סגור</span>
               </li>
             </ul>
-            <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm font-medium inline-block mt-4">
+            <a 
+              href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm font-medium inline-block mt-4"
+            >
               לקבלת הצעת מחיר
             </a>
           </div>
@@ -86,6 +94,8 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} מטבחי דניאל. כל הזכויות שמורות.</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

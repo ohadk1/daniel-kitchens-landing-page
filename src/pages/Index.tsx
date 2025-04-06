@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";
@@ -7,8 +8,10 @@ import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Footer";
 import FloatingButton from "../components/FloatingButton";
+
 const Index = () => {
-  return <div className="min-h-screen bg-kitchen-light my-0">
+  return (
+    <div className="min-h-screen bg-kitchen-light">
       <Navbar />
       <Hero />
       <Gallery />
@@ -18,6 +21,8 @@ const Index = () => {
       <CallToAction />
       <Footer />
       <FloatingButton />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
