@@ -2,7 +2,7 @@ import { CheckCircle } from 'lucide-react';
 const About = () => {
   const advantages = ["מעל 25 שנות ניסיון בתכנון וייצור מטבחים", "חומרים איכותיים העומדים בסטנדרטים הגבוהים ביותר", "צוות נגרים מקצועי ומיומן", "התאמה מושלמת לצרכי הלקוח ולחלל", "ליווי אישי משלב התכנון ועד ההתקנה", "שירות ואחריות ללא פשרות"];
   return <section id="about" className="py-20 bg-kitchen-DEFAULT text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-zinc-950">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="bg-[c0b8a8]">
             
