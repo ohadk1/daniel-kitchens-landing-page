@@ -1,3 +1,4 @@
+
 import { Phone, MapPin, Mail, Clock, Instagram, Facebook } from 'lucide-react';
 const Footer = () => {
   return <footer className="bg-kitchen-DEFAULT text-black">
@@ -12,10 +13,10 @@ const Footer = () => {
               מטבחי דניאל - נגריית מטבחי יוקרה המתמחה בתכנון, ייצור והתקנה של מטבחים מעוצבים באיכות הגבוהה ביותר.
             </p>
             <div className="flex space-x-4 space-x-reverse">
-              <a href="#" className="hover:text-kitchen-accent">
+              <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" className="hover:text-kitchen-accent">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-kitchen-accent">
+              <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" className="hover:text-kitchen-accent">
                 <Instagram size={20} />
               </a>
             </div>
@@ -46,7 +47,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" />
-                <span>08-6571125</span>
+                <span>משרד: 08-6571125</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="ml-2" />
+                <span>פקס: 08-9712757</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="ml-2" />
+                <span>אלירן: 054-239-5502</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="ml-2" />
+                <span>שמרית: 054-666-9687</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="ml-2" />
@@ -76,7 +89,7 @@ const Footer = () => {
                 <span>שבת: סגור</span>
               </li>
             </ul>
-            <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm font-medium inline-block mt-4">
+            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm font-medium inline-block mt-4">
               לקבלת הצעת מחיר
             </a>
           </div>

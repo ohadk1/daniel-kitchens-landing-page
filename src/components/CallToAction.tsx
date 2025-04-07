@@ -1,3 +1,4 @@
+
 import { WhatsappIcon } from './Icons';
 const CallToAction = () => {
   return <section className="relative py-20 bg-kitchen-wood text-white" style={{
@@ -14,7 +15,7 @@ const CallToAction = () => {
           צרו איתנו קשר עוד היום לקבלת הצעת מחיר ללא התחייבות ותנו לנו להפוך את חלום המטבח שלכם למציאות
         </p>
         
-        <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-4 rounded-md text-xl font-medium">
+        <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-4 rounded-md text-xl font-medium">
           <WhatsappIcon className="ml-3" />
           לקבלת הצעת מחיר בוואטסאפ
         </a>
