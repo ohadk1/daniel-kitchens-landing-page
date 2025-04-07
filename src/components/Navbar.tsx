@@ -10,20 +10,20 @@ const ContactMenu = () => {
         <h3 className="font-bold text-white border-b pb-2 mb-3 text-right">צור קשר</h3>
         <div className="space-y-3 text-white">
           <p className="flex items-center justify-between">
-            <span>08-6571125</span>
             <span className="font-medium">משרד:</span>
+            <span>08-6571125</span>
           </p>
           <p className="flex items-center justify-between">
-            <span>08-9712757</span>
             <span className="font-medium">פקס:</span>
+            <span>08-9712757</span>
           </p>
           <p className="flex items-center justify-between">
-            <span>054-239-5502</span>
             <span className="font-medium">אלירן:</span>
+            <span>054-239-5502</span>
           </p>
           <p className="flex items-center justify-between">
-            <span>054-666-9687</span>
             <span className="font-medium">שמרית:</span>
+            <span>054-666-9687</span>
           </p>
         </div>
       </div>
