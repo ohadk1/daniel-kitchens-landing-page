@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 
@@ -67,6 +66,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
+            <div className="flex-shrink-0">
+              <a href="#" className="flex items-center">
+                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-12 w-auto" />
+              </a>
+            </div>
             <a 
               href="https://www.facebook.com/DanielKitchensLTD" 
               target="_blank" 
@@ -85,11 +89,6 @@ const Navbar = () => {
             >
               <Instagram size={18} />
             </a>
-            <div className="flex-shrink-0">
-              <a href="#" className="flex items-center">
-                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-12 w-auto" />
-              </a>
-            </div>
           </div>
           
           <div className="hidden md:block">

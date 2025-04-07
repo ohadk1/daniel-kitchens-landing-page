@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Footer";
 import FloatingButton from "../components/FloatingButton";
+import AccessibilityWidget from "../components/AccessibilityWidget";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <CallToAction />
       <Footer />
       <FloatingButton />
+      <AccessibilityWidget />
     </div>
   );
 };

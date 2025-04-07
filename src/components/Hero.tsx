@@ -16,7 +16,7 @@ const Hero = () => {
             מטבחי דניאל בע"מ בדימונה, ישראל. מציעים מטבחים בהתאמה אישית לכל הצרכים שלכם. עם למעלה מ-20 שנות ניסיון ומסירות למלאכה איכותית, אתם יכולים לסמוך עלינו שנהפוך את מטבח החלומות שלכם למציאות
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.me/972000000000?text=אשמח%20לקבל%20הצעת%20מחיר%20למטבח%20חדש" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium">
+            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium">
               לקבלת הצעת מחיר
             </a>
           </div>
@@ -34,4 +34,3 @@ const Hero = () => {
     </section>;
 };
 export default Hero;
-
