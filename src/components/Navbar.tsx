@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 
@@ -5,13 +6,25 @@ import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 const ContactMenu = () => {
   return (
     <div className="absolute right-0 mt-2 w-64 bg-black/90 shadow-lg rounded-md overflow-hidden z-50">
-      <div className="p-4 text-right">
-        <h3 className="font-bold text-white border-b pb-2 mb-3">צור קשר</h3>
+      <div className="p-4">
+        <h3 className="font-bold text-white border-b pb-2 mb-3 text-right">צור קשר</h3>
         <div className="space-y-3 text-white">
-          <p className="flex items-center justify-end"><span>08-6571125</span><span className="ml-2 font-medium">משרד:</span></p>
-          <p className="flex items-center justify-end"><span>08-9712757</span><span className="ml-2 font-medium">פקס:</span></p>
-          <p className="flex items-center justify-end"><span>054-239-5502</span><span className="ml-2 font-medium">אלירן:</span></p>
-          <p className="flex items-center justify-end"><span>054-666-9687</span><span className="ml-2 font-medium">שמרית:</span></p>
+          <p className="flex items-center justify-between">
+            <span>08-6571125</span>
+            <span className="font-medium">משרד:</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span>08-9712757</span>
+            <span className="font-medium">פקס:</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span>054-239-5502</span>
+            <span className="font-medium">אלירן:</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span>054-666-9687</span>
+            <span className="font-medium">שמרית:</span>
+          </p>
         </div>
       </div>
     </div>
