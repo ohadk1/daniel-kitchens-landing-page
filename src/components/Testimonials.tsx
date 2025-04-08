@@ -21,7 +21,7 @@ const Testimonials = () => {
         <h2 className="text-center mb-12 font-bold text-[#c0b8a8] text-4xl">לקוחות מספרים</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 transition-transform duration-300 hover:-translate-y-2">
+          {testimonials.map((testimonial, index) => <div key={index} className="backdrop-blur-sm p-8 rounded-lg border border-white/20 transition-transform duration-300 hover:-translate-y-2 bg-gray-100">
               <div className="flex mb-3">
                 {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="fill-kitchen-accent text-kitchen-accent h-5 w-5" />)}
               </div>
