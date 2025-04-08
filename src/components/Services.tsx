@@ -45,7 +45,7 @@ const Services = () => {
           <p className="text-lg mb-6">
             צרו איתנו קשר עוד היום לתיאום פגישת ייעוץ ללא התחייבות וקבלת הצעת מחיר מותאמת אישית למטבח חלומותיכם
           </p>
-          <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-white text-kitchen-DEFAULT hover:bg-opacity-90 px-8 py-3 rounded-md text-black font-medium inline-block">
+          <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-#c0b8a8 text-kitchen-DEFAULT hover:bg-opacity-90 px-8 py-3 rounded-md text-black font-medium inline-block">
             לקבלת הצעת מחיר
           </a>
         </div>
