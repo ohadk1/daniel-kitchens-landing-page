@@ -16,7 +16,7 @@ const Testimonials = () => {
     content: "כזוג צעיר שרכש דירה ראשונה, היה חשוב לנו לקבל מטבח איכותי במחיר הוגן. מטבחי דניאל לא רק עמדו בציפיות, אלא אף עלו עליהן. המטבח שקיבלנו מתפקד מצוין ונראה מדהים. ממליצים בחום!",
     rating: 5
   }];
-  return <section className="py-20 bg-kitchen-DEFAULT text-white">
+  return <section className="py-20 text-white bg-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center mb-12 font-bold text-[#c0b8a8] text-4xl">לקוחות מספרים</h2>
         
