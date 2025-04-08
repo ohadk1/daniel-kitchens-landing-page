@@ -103,7 +103,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Clock size={18} className="ml-2" aria-hidden="true" />
-                <span>א'-ה': 09:00-18:00</span>
+                <span>א'-ה': 08:00-18:00</span>
               </li>
               <li className="flex items-center">
                 
