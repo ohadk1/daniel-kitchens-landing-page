@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from './ui/button';
-
 const kitchenImages = [{
   url: 'https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg',
   alt: 'מטבח מודרני',
@@ -200,7 +199,6 @@ const kitchenImages = [{
   title: 'מטבח מודרני מעוצב',
   description: 'עיצוב מודרני למטבח המשלב פונקציונליות ויופי'
 }];
-
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [visibleImages, setVisibleImages] = useState(6); // Initially show 6 images
@@ -227,7 +225,6 @@ const Gallery = () => {
     const newVisibleCount = Math.min(visibleImages + 6, kitchenImages.length);
     setVisibleImages(newVisibleCount);
   };
-
   return <section id="gallery" className="py-20 bg-kitchen-light bg-[c0b8a8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
@@ -261,7 +258,7 @@ const Gallery = () => {
             <img src={kitchenImages[selectedImage].url} alt={kitchenImages[selectedImage].alt} className="max-w-full max-h-[80vh] object-contain" />
             <div className="text-white text-center mt-4">
               <h3 className="text-xl font-semibold">{kitchenImages[selectedImage].title}</h3>
-              <p className="mt-2">{kitchenImages[selectedImage].description}</p>
+              
             </div>
           </div>
           
@@ -271,5 +268,4 @@ const Gallery = () => {
         </div>}
     </section>;
 };
-
 export default Gallery;
