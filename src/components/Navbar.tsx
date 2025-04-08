@@ -70,11 +70,11 @@ const Navbar = () => {
               <a href="#home" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">בית</a>
               <a href="#gallery" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">גלריה</a>
               <a href="#about" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">אודות</a>
-              <a href="#services" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">שירותים</a>
+              <a href="#services" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">שירותים</a>
               
               {/* Contact menu with dropdown */}
               <div className="relative contact-menu-container">
-                <button onClick={() => setShowContact(!showContact)} className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium focus:outline-black">
+                <button onClick={() => setShowContact(!showContact)} className="px-3 py-2 rounded-md text-lg font-medium focus:outline-black text-zinc-950">
                   צור קשר
                 </button>
                 {showContact && <ContactMenu />}
