@@ -1,4 +1,3 @@
-
 import { WhatsappIcon } from './Icons';
 const CallToAction = () => {
   return <section className="relative py-20 bg-kitchen-wood text-white" style={{
@@ -8,7 +7,7 @@ const CallToAction = () => {
     backgroundBlendMode: "multiply",
     backgroundColor: "rgba(0,0,0,0.6)"
   }}>
-      <div className="absolute inset-0 bg-stone-500"></div>
+      <div className="absolute inset-0 bg-[#c0b8a8]"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">מוכנים למטבח חלומותיכם?</h2>
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
