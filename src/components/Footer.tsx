@@ -114,7 +114,7 @@ const Footer = () => {
                 <span>ו'-שבת: סגור</span>
               </li>
             </ul>
-            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" aria-label="צור קשר לקבלת הצעת מחיר בוואטסאפ" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-13 py-3 rounded-md text-sm font-medium inline-block mt-4">
+            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" aria-label="צור קשר לקבלת הצעת מחיר בוואטסאפ" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-14 py-3 rounded-md text-sm font-medium inline-block mt-4">
               לקבלת הצעת מחיר
             </a>
           </div>
