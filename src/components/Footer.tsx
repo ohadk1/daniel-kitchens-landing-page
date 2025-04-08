@@ -100,7 +100,7 @@ const Footer = () => {
           {/* Opening Hours */}
           <div>
             <h3 className="text-lg font-semibold mb-4">שעות פעילות</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li className="flex items-center">
                 <Clock size={18} className="ml-2" aria-hidden="true" />
                 <span>א'-ה': 09:00-18:00</span>
