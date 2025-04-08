@@ -39,10 +39,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 space-x-reverse">
               <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" className="hover:text-kitchen-accent" aria-label="עמוד הפייסבוק שלנו">
-                <Facebook size={20} />
+                <Facebook size={20} className="w-10 h-10" />
               </a>
               <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" className="hover:text-kitchen-accent" aria-label="עמוד האינסטגרם שלנו">
-                <Instagram size={20} />
+                <Instagram size={20} className="w-10 h-10" />
               </a>
             </div>
           </div>
@@ -72,15 +72,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
-                <span>אלירן: 054-239-5502</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={18} className="ml-2" aria-hidden="true" />
                 <span>משרד: 08-6571125</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
                 <span>פקס: 08-9712757</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="ml-2" aria-hidden="true" />
+                <span>אלירן: 054-239-5502</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
@@ -100,7 +100,7 @@ const Footer = () => {
           {/* Opening Hours */}
           <div>
             <h3 className="text-lg font-semibold mb-4">שעות פעילות</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li className="flex items-center">
                 <Clock size={18} className="ml-2" aria-hidden="true" />
                 <span>א'-ה': 09:00-18:00</span>
