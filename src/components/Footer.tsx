@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Logo and About */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל - לוגו" className="h-12 w-auto" />
+              <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל - לוגו" className="h-14 w-auto" />
             </div>
             <p className="mb-4">
               מטבחי דניאל - נגריית מטבחי יוקרה המתמחה בתכנון, ייצור והתקנה של מטבחים מעוצבים באיכות הגבוהה ביותר.
