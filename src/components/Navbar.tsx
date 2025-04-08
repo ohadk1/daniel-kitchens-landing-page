@@ -59,7 +59,7 @@ const Navbar = () => {
                   <Facebook size={18} className="w-8 h-8" />
                 </a>
                 <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className="hover:text-kitchen-accent transition-colors">
-                  <Instagram size={18} />
+                  <Instagram size={18} className="w-8 h-8" />
                 </a>
               </div>
             </div>
