@@ -72,15 +72,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
+                <span>אלירן: 054-239-5502</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="ml-2" aria-hidden="true" />
                 <span>משרד: 08-6571125</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
                 <span>פקס: 08-9712757</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={18} className="ml-2" aria-hidden="true" />
-                <span>אלירן: 054-239-5502</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="ml-2" aria-hidden="true" />
@@ -100,7 +100,7 @@ const Footer = () => {
           {/* Opening Hours */}
           <div>
             <h3 className="text-lg font-semibold mb-4">שעות פעילות</h3>
-            <ul className="space-y-3 px-0 my-0">
+            <ul className="space-y-3">
               <li className="flex items-center">
                 <Clock size={18} className="ml-2" aria-hidden="true" />
                 <span>א'-ה': 09:00-18:00</span>
@@ -109,12 +109,12 @@ const Footer = () => {
                 
                 
               </li>
-              <li className="flex items-center my-0 py-0">
+              <li className="flex items-center">
                 <Clock size={18} className="ml-2" aria-hidden="true" />
                 <span>ו'-שבת: סגור</span>
               </li>
             </ul>
-            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" aria-label="צור קשר לקבלת הצעת מחיר בוואטסאפ" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-14 py-3 rounded-md text-sm font-medium inline-block mt-4">
+            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm font-medium inline-block mt-4" aria-label="צור קשר לקבלת הצעת מחיר בוואטסאפ">
               לקבלת הצעת מחיר
             </a>
           </div>
