@@ -14,7 +14,7 @@ const CallToAction = () => {
           צרו איתנו קשר עוד היום לקבלת הצעת מחיר ללא התחייבות ותנו לנו להפוך את חלום המטבח שלכם למציאות
         </p>
         
-        <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-white hover:bg-opacity-90 text-black px-8 py-4 rounded-md text-xl font-medium border-2 border-black">
+        <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-gray-100 kitchen-accent hover:bg-opacity-90 text-black px-8 py-4 rounded-md text-xl font-medium border-2 border-black">
           <WhatsappIcon className="ml-3" />
           לקבלת הצעת מחיר בוואטסאפ
         </a>
