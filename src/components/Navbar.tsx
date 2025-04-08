@@ -44,9 +44,9 @@ const Navbar = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showContact]);
-  return <nav style={{
+  return <nav className="fixed w-full z-30 bg-transparent" style={{
     top: '0'
-  }} className="fixed w-full z-30 bg-[#ccc4b4]">
+  }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4 space-x-reverse">
@@ -74,7 +74,7 @@ const Navbar = () => {
               
               {/* Contact menu with dropdown */}
               <div className="relative contact-menu-container">
-                <button onClick={() => setShowContact(!showContact)} className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium focus:outline-black">
+                <button onClick={() => setShowContact(!showContact)} className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium focus:outline-black">
                   צור קשר
                 </button>
                 {showContact && <ContactMenu />}
