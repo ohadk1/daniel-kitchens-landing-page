@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from './ui/button';
+
 const kitchenImages = [{
   url: 'https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg',
   alt: 'מטבח מודרני',
@@ -162,7 +163,7 @@ const kitchenImages = [{
   url: 'https://i.postimg.cc/ZnttjpJ0/IMG-20220626-WA0011-01.jpg',
   alt: 'מטבח בסגנון תעשייתי',
   title: 'מטבח בסגנון תעשייתי',
-  description: 'עיצוב מטבח בהשראה תעשייתית עם חומרים גולמיים'
+  description: 'עיצוב מטבח ��השראה תעשייתית עם חומרים גולמיים'
 }, {
   url: 'https://i.postimg.cc/rs16Hspj/IMG-20220922-WA0009.jpg',
   alt: 'מטבח בגוונים כהים',
@@ -199,6 +200,7 @@ const kitchenImages = [{
   title: 'מטבח מודרני מעוצב',
   description: 'עיצוב מודרני למטבח המשלב פונקציונליות ויופי'
 }];
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [visibleImages, setVisibleImages] = useState(6); // Initially show 6 images
@@ -222,10 +224,10 @@ const Gallery = () => {
     }
   };
   const handleShowMore = () => {
-    // Show 6 more images each time, or all remaining if less than 6
     const newVisibleCount = Math.min(visibleImages + 6, kitchenImages.length);
     setVisibleImages(newVisibleCount);
   };
+
   return <section id="gallery" className="py-20 bg-kitchen-light bg-[c0b8a8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
@@ -236,10 +238,6 @@ const Gallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {kitchenImages.slice(0, visibleImages).map((image, index) => <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]" onClick={() => openLightbox(index)}>
               <img src={image.url} alt={image.alt} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-xl font-semibold">{image.title}</h3>
-                <p className="text-white/90 mt-2">{image.description}</p>
-              </div>
             </div>)}
         </div>
         
@@ -250,7 +248,6 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Lightbox */}
       {selectedImage !== null && <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
           <button onClick={closeLightbox} className="absolute top-4 right-4 text-white hover:text-kitchen-accent" aria-label="סגור">
             <X size={32} />
@@ -260,7 +257,13 @@ const Gallery = () => {
             <ChevronLeft size={40} />
           </button>
           
-          
+          <div className="max-w-4xl max-h-[80vh]">
+            <img src={kitchenImages[selectedImage].url} alt={kitchenImages[selectedImage].alt} className="max-w-full max-h-[80vh] object-contain" />
+            <div className="text-white text-center mt-4">
+              <h3 className="text-xl font-semibold">{kitchenImages[selectedImage].title}</h3>
+              <p className="mt-2">{kitchenImages[selectedImage].description}</p>
+            </div>
+          </div>
           
           <button onClick={goToNext} className="absolute right-4 text-white hover:text-kitchen-accent" aria-label="תמונה הבאה">
             <ChevronRight size={40} />
@@ -268,4 +271,5 @@ const Gallery = () => {
         </div>}
     </section>;
 };
+
 export default Gallery;
