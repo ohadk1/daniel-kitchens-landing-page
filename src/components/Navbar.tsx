@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 
@@ -65,30 +66,32 @@ const Navbar = () => {
     <nav className={`fixed w-full z-30 transition-all duration-300 ${scrolled ? 'bg-black/90 shadow-lg' : 'bg-transparent'}`} style={{ top: '0' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-4">
-            <div className="flex-shrink-0">
+          <div className="flex items-center space-x-4 space-x-reverse">
+            <div className="flex-shrink-0 flex items-center">
               <a href="#" className="flex items-center">
-                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-12 w-auto" />
+                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-12 w-auto ml-4" />
               </a>
+              <div className="flex space-x-2 space-x-reverse">
+                <a 
+                  href="https://www.facebook.com/DanielKitchensLTD" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="פייסבוק"
+                  className="hover:text-kitchen-accent transition-colors"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a 
+                  href="https://www.instagram.com/daniel_kitchens_ltd/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="אינסטגרם"
+                  className="hover:text-kitchen-accent transition-colors"
+                >
+                  <Instagram size={18} />
+                </a>
+              </div>
             </div>
-            <a 
-              href="https://www.facebook.com/DanielKitchensLTD" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="פייסבוק"
-              className="hover:text-kitchen-accent transition-colors"
-            >
-              <Facebook size={18} />
-            </a>
-            <a 
-              href="https://www.instagram.com/daniel_kitchens_ltd/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="אינסטגרם"
-              className="hover:text-kitchen-accent transition-colors"
-            >
-              <Instagram size={18} />
-            </a>
           </div>
           
           <div className="hidden md:block">
