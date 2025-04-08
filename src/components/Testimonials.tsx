@@ -23,7 +23,7 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => <div key={index} className="backdrop-blur-sm p-8 rounded-lg border border-white/20 transition-transform duration-300 hover:-translate-y-2 bg-gray-100">
               <div className="flex mb-3">
-                {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="fill-kitchen-accent text-kitchen-accent h-5 w-5" />)}
+                {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="fill-kitchen-accent text-kitchen-accent h-5 w-5 bg-[#e8ff2c]" />)}
               </div>
               <p className="italic mb-6 text-slate-800">"{testimonial.content}"</p>
               <div>
