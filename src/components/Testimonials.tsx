@@ -27,7 +27,7 @@ const Testimonials = () => {
               </div>
               <p className="italic mb-6 text-slate-800">"{testimonial.content}"</p>
               <div>
-                <p className="font-bold text-lg">{testimonial.name}</p>
+                <p className="font-bold text-[zinc-600inline-flex_items-center_bg-kitchen-accent_hover:bg-opacity-90_text-white_px-8_py-4_rounded-md_text-xl_font-medium] text-[#c0b8a8]">{testimonial.name}</p>
                 <p className="text-white/70">{testimonial.role}</p>
               </div>
             </div>)}
