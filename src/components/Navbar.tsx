@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [showContact]);
 
   return (
-    <nav className="fixed w-full z-30 bg-black/90 shadow-lg" style={{ top: '0' }}>
+    <nav className="fixed w-full z-30 bg-transparent" style={{ top: '0' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4 space-x-reverse">
