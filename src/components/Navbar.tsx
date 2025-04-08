@@ -67,9 +67,9 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 space-x-reverse">
-              <a href="#home" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">בית</a>
-              <a href="#gallery" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">גלריה</a>
-              <a href="#about" className="text-white hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">אודות</a>
+              <a href="#home" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">בית</a>
+              <a href="#gallery" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">גלריה</a>
+              <a href="#about" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">אודות</a>
               <a href="#services" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">שירותים</a>
               
               {/* Contact menu with dropdown */}
