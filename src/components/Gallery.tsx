@@ -225,7 +225,7 @@ const Gallery = () => {
     const newVisibleCount = Math.min(visibleImages + 6, kitchenImages.length);
     setVisibleImages(newVisibleCount);
   };
-  return <section id="gallery" className="py-20 bg-kitchen-light bg-[c0b8a8]">
+  return <section id="gallery" className="py-20 bg-[c0b8a8] bg-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
         <p className="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
