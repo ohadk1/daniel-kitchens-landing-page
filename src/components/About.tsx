@@ -27,14 +27,9 @@ const About = () => {
           
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img src="https://images.unsplash.com/photo-1556911073-38141963c9e0" alt="נגרייה מקצועית" className="w-full h-full object-cover" />
+              
             </div>
-            <div className="absolute -bottom-6 -left-6 w-2/3 bg-kitchen-accent p-6 rounded-lg shadow-xl">
-              <p className="text-lg font-bold text-slate-50">
-                "אנו גאים לייצר מטבחים שהם לא רק יפים, אלא גם עומדים במבחן הזמן"
-              </p>
-              <p className="mt-2 font-medium text-slate-50">- דניאל, מייסד</p>
-            </div>
+            
           </div>
         </div>
       </div>
