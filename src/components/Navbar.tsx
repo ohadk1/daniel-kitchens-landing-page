@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4 space-x-reverse">
             <div className="flex-shrink-0 flex items-center">
               <a href="#" className="flex items-center">
-                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-12 w-auto ml-4" />
+                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-16 w-auto ml-4" />
               </a>
               <div className="flex space-x-2 space-x-reverse">
                 <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className="hover:text-kitchen-accent transition-colors">
