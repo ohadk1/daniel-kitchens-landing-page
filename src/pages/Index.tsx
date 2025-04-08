@@ -13,13 +13,18 @@ import AccessibilityWidget from "../components/AccessibilityWidget";
 const Index = () => {
   return (
     <div className="min-h-screen bg-kitchen-light">
+      <a href="#main-content" className="skip-to-content">
+        דלג לתוכן העיקרי
+      </a>
       <Navbar />
-      <Hero />
-      <Gallery />
-      <About />
-      <Services />
-      <Testimonials />
-      <CallToAction />
+      <main id="main-content">
+        <Hero />
+        <Gallery />
+        <About />
+        <Services />
+        <Testimonials />
+        <CallToAction />
+      </main>
       <Footer />
       <FloatingButton />
       <AccessibilityWidget />

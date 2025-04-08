@@ -8,8 +8,12 @@ import {
   ZoomIn, 
   ZoomOut, 
   X,
-  FileText,
-  Accessibility as AccessibilityIcon
+  Keyboard,
+  MousePointer,
+  AlignCenter,
+  MonitorSmartphone,
+  AudioLines,
+  Focus
 } from 'lucide-react';
 import { 
   Dialog,
@@ -22,12 +26,17 @@ import {
 } from './ui/dialog';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Switch } from './ui/switch';
+import { Label } from './ui/label';
 
 const AccessibilityWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [fontSize, setFontSize] = useState(100);
   const [highContrast, setHighContrast] = useState(false);
   const [disableAnimations, setDisableAnimations] = useState(false);
+  const [keyboardNavigation, setKeyboardNavigation] = useState(false);
+  const [screenReader, setScreenReader] = useState(false);
+  const [focusVisible, setFocusVisible] = useState(false);
 
   // Apply font size change
   useEffect(() => {
@@ -52,11 +61,41 @@ const AccessibilityWidget = () => {
     }
   }, [disableAnimations]);
 
+  // Apply keyboard navigation
+  useEffect(() => {
+    if (keyboardNavigation) {
+      document.documentElement.classList.add('keyboard-navigation');
+    } else {
+      document.documentElement.classList.remove('keyboard-navigation');
+    }
+  }, [keyboardNavigation]);
+
+  // Apply screen reader optimization
+  useEffect(() => {
+    if (screenReader) {
+      document.documentElement.classList.add('screen-reader-optimize');
+    } else {
+      document.documentElement.classList.remove('screen-reader-optimize');
+    }
+  }, [screenReader]);
+
+  // Apply focus visible
+  useEffect(() => {
+    if (focusVisible) {
+      document.documentElement.classList.add('focus-visible-enabled');
+    } else {
+      document.documentElement.classList.remove('focus-visible-enabled');
+    }
+  }, [focusVisible]);
+
   // Reset all settings
   const resetSettings = () => {
     setFontSize(100);
     setHighContrast(false);
     setDisableAnimations(false);
+    setKeyboardNavigation(false);
+    setScreenReader(false);
+    setFocusVisible(false);
   };
 
   return (
@@ -66,11 +105,11 @@ const AccessibilityWidget = () => {
         className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform duration-300 hover:scale-110"
         aria-label="הגדרות נגישות"
       >
-        <AccessibilityIcon className="h-6 w-6" />
+        <Eye className="h-6 w-6" />
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-md max-h-[80vh] overflow-auto" dir="rtl">
+        <DialogContent className="max-w-md max-h-[90vh] overflow-auto" dir="rtl">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold">הגדרות נגישות</DialogTitle>
             <DialogDescription>
@@ -82,7 +121,7 @@ const AccessibilityWidget = () => {
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="display">תצוגה</TabsTrigger>
               <TabsTrigger value="reading">קריאה</TabsTrigger>
-              <TabsTrigger value="legal">משפטי</TabsTrigger>
+              <TabsTrigger value="navigation">ניווט</TabsTrigger>
             </TabsList>
             
             <TabsContent value="display" className="mt-4">
@@ -128,6 +167,32 @@ const AccessibilityWidget = () => {
                     </Button>
                   </div>
                 </div>
+                
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <MonitorSmartphone className="h-4 w-4" />
+                      <Label htmlFor="responsive-view">תמיכה במסכים שונים</Label>
+                    </div>
+                    <span className="text-sm text-green-600">פעיל</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">האתר מותאם אוטומטית למובייל ולמסכים בגדלים שונים</p>
+                </div>
+                
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Focus className="h-4 w-4" />
+                      <Label htmlFor="focus-visible">הדגשת מיקוד חזותי</Label>
+                    </div>
+                    <Switch 
+                      id="focus-visible" 
+                      checked={focusVisible}
+                      onCheckedChange={setFocusVisible}
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">הדגשה ברורה של האלמנט הממוקד בעת שימוש במקלדת</p>
+                </div>
               </div>
             </TabsContent>
             
@@ -139,6 +204,7 @@ const AccessibilityWidget = () => {
                     onClick={() => setFontSize(Math.max(fontSize - 10, 100))}
                     disabled={fontSize <= 100}
                     className="p-2 bg-white rounded-full shadow disabled:opacity-50"
+                    aria-label="הקטן טקסט"
                   >
                     <ZoomOut className="h-4 w-4" />
                   </button>
@@ -147,6 +213,7 @@ const AccessibilityWidget = () => {
                     onClick={() => setFontSize(Math.min(fontSize + 10, 200))}
                     disabled={fontSize >= 200}
                     className="p-2 bg-white rounded-full shadow disabled:opacity-50"
+                    aria-label="הגדל טקסט"
                   >
                     <ZoomIn className="h-4 w-4" />
                   </button>
@@ -157,6 +224,22 @@ const AccessibilityWidget = () => {
                     style={{ width: `${((fontSize - 100) / 100) * 100}%` }}
                   ></div>
                 </div>
+                <p className="text-xs text-gray-500 mt-2">האתר תומך בהגדלת תצוגה עד 200%</p>
+              </div>
+              
+              <div className="bg-gray-100 p-3 rounded-lg mt-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <AudioLines className="h-4 w-4" />
+                    <Label htmlFor="screen-reader">אופטימיזציה לקוראי מסך</Label>
+                  </div>
+                  <Switch 
+                    id="screen-reader" 
+                    checked={screenReader}
+                    onCheckedChange={setScreenReader}
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mt-1">הוספת מידע לקוראי מסך לשיפור הנגישות</p>
               </div>
               
               <div className="mt-4 p-4 border rounded-lg">
@@ -165,51 +248,56 @@ const AccessibilityWidget = () => {
               </div>
             </TabsContent>
             
-            <TabsContent value="legal" className="mt-4">
+            <TabsContent value="navigation" className="mt-4">
               <div className="space-y-4">
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-2 flex items-center">
-                    <FileText className="ml-2 h-4 w-4" />
-                    הצהרת נגישות
-                  </h3>
-                  <p className="text-sm">
-                    אנו פועלים להנגיש את האתר לכלל האוכלוסייה, כולל אנשים עם מוגבלויות. 
-                    בוצעו התאמות נגישות בהתאם לתקן הישראלי (ת"י 5568) ולרמה AA של תקן WCAG 2.0.
-                  </p>
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Keyboard className="h-4 w-4" />
+                      <Label htmlFor="keyboard-nav">ניווט באמצעות מקלדת</Label>
+                    </div>
+                    <Switch 
+                      id="keyboard-nav" 
+                      checked={keyboardNavigation}
+                      onCheckedChange={setKeyboardNavigation}
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">אופטימיזציה לניווט באמצעות מקלדת (Tab, Shift+Tab, Enter)</p>
                 </div>
                 
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-2 flex items-center">
-                    <FileText className="ml-2 h-4 w-4" />
-                    מדיניות פרטיות
-                  </h3>
-                  <p className="text-sm">
-                    אנו מתחייבים לשמור על פרטיות המידע שלך. הפרטים שתמסור ישמשו אך ורק לצורכי יצירת קשר, 
-                    שירות או עדכונים שיווקיים מטעמנו. אנו לא נעביר את המידע לגורם שלישי ללא הסכמתך. 
-                    תוכל לבקש להסיר את פרטיך בכל עת.
-                  </p>
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <MousePointer className="h-4 w-4" />
+                      <Label htmlFor="no-mouse">גלישה ללא עכבר</Label>
+                    </div>
+                    <span className="text-sm text-green-600">פעיל</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">האתר מאפשר גלישה מלאה ללא שימוש בעכבר</p>
                 </div>
                 
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-2 flex items-center">
-                    <FileText className="ml-2 h-4 w-4" />
-                    תנאי שימוש
-                  </h3>
-                  <p className="text-sm">
-                    השימוש באתר זה מהווה הסכמה לתנאים המפורטים. אין להעתיק, לשכפל או להשתמש בתכני האתר 
-                    ללא אישור מראש. איננו אחראים על נזקים ישירים או עקיפים הנובעים מהשימוש באתר.
-                  </p>
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <AlignCenter className="h-4 w-4" />
+                      <Label htmlFor="semantic-structure">מבנה סמנטי</Label>
+                    </div>
+                    <span className="text-sm text-green-600">פעיל</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">האתר בנוי עם מבנה סמנטי נכון וכותרות היררכיות</p>
                 </div>
                 
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-2 flex items-center">
-                    <FileText className="ml-2 h-4 w-4" />
-                    כתב ויתור
-                  </h3>
+                <div className="bg-gray-100 p-3 rounded-lg">
+                  <h3 className="font-medium mb-2">עזרה בניווט</h3>
                   <p className="text-sm">
-                    התכנים באתר נועדו למידע כללי בלבד ואינם מהווים ייעוץ מקצועי. כל פעולה שתתבצע על סמך 
-                    מידע זה היא באחריות המשתמש בלבד.
+                    ניתן לנווט באתר באמצעות:
                   </p>
+                  <ul className="text-sm list-disc list-inside mr-4 mt-2">
+                    <li>מקש Tab - מעבר לאלמנט הבא</li>
+                    <li>Shift + Tab - מעבר לאלמנט הקודם</li>
+                    <li>Enter / Space - הפעלת האלמנט הנוכחי</li>
+                    <li>חיצי מקלדת - ניווט בתפריטים</li>
+                  </ul>
                 </div>
               </div>
             </TabsContent>
