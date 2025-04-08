@@ -56,7 +56,7 @@ const Navbar = () => {
               </a>
               <div className="flex space-x-2 space-x-reverse">
                 <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className="hover:text-kitchen-accent transition-colors">
-                  <Facebook size={18} />
+                  <Facebook size={18} className="w-8 h-8" />
                 </a>
                 <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className="hover:text-kitchen-accent transition-colors">
                   <Instagram size={18} />
