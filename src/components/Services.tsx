@@ -1,4 +1,3 @@
-
 import { Hammer, Compass, Clock4, Wrench, ShieldCheck, Truck } from 'lucide-react';
 const Services = () => {
   const services = [{
@@ -26,7 +25,7 @@ const Services = () => {
     title: "אחריות ושירות",
     description: "אחריות מלאה על כל מטבח ושירות אדיב ומקצועי גם לאחר ההתקנה"
   }];
-  return <section id="services" className="py-20 bg-gray-100">
+  return <section id="services" className="py-20 bg-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">השירותים שלנו</h2>
         <p className="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
