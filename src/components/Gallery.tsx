@@ -254,7 +254,13 @@ const Gallery = () => {
             <ChevronLeft size={40} />
           </button>
           
-          
+          <div className="max-w-4xl max-h-[80vh]">
+            <img src={kitchenImages[selectedImage].url} alt={kitchenImages[selectedImage].alt} className="max-w-full max-h-[80vh] object-contain" />
+            <div className="text-white text-center mt-4">
+              <h3 className="text-xl font-semibold">{kitchenImages[selectedImage].title}</h3>
+              
+            </div>
+          </div>
           
           <button onClick={goToNext} className="absolute right-4 text-white hover:text-kitchen-accent" aria-label="תמונה הבאה">
             <ChevronRight size={40} />
