@@ -16,7 +16,7 @@ interface Project {
   }[];
 }
 
-// Sample projects data
+// Sample projects data - you can customize these projects
 const kitchenProjects: Project[] = [
   {
     id: "project1",
@@ -159,7 +159,7 @@ const ProjectGallery = () => {
           מבחר מהמטבחים שעיצבנו וייצרנו עבור לקוחותינו. כל מטבח מיוצר בהתאמה אישית לצרכי הלקוח ולחלל הספציפי.
         </p>
         
-        {/* Projects grid - Two rows of three projects each */}
+        {/* Projects grid - First row of three projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {kitchenProjects.slice(0, 3).map((project) => (
             <Card 
@@ -184,6 +184,7 @@ const ProjectGallery = () => {
           ))}
         </div>
         
+        {/* Projects grid - Second row of three projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {kitchenProjects.slice(3, 6).map((project) => (
             <Card 
