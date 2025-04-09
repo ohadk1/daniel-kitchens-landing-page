@@ -63,9 +63,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				kitchen: {
-					DEFAULT: '#C0B8A8',
+					DEFAULT: '#ccc4b4',
 					light: '#F6F6F7',
-					accent: '#C0B8A8',
+					accent: '#ccc4b4',
 					wood: '#8E6F4A',
 					gray: '#8E9196'
 				}

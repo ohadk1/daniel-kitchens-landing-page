@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 
-// Create a new ContactMenu component for the dropdown
 const ContactMenu = () => {
   return <div className="absolute right-0 mt-2 w-64 bg-black/90 shadow-lg rounded-md overflow-hidden z-50">
       <div className="p-4">
@@ -34,7 +32,6 @@ const Navbar = () => {
   const [showContact, setShowContact] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Add scroll event listener to track scrolling
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -49,7 +46,6 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
-  // Close contact menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -64,33 +60,30 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed w-full z-30 transition-all duration-300 ${
-        scrolled ? 'bg-black/95 shadow-md py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-kitchen/95 shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-4 space-x-reverse">
-            <div className="flex-shrink-0 flex items-center">
-              <a href="#" className="flex items-center">
-                <img 
-                  src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" 
-                  alt="מטבחי דניאל" 
-                  className={`transition-all duration-300 ${
-                    scrolled ? 'h-12 w-auto' : 'h-20 w-auto'
-                  } ml-4`} 
-                />
+        <div className="flex items-center space-x-4 space-x-reverse">
+          <div className="flex-shrink-0 flex items-center">
+            <a href="#" className="flex items-center">
+              <img 
+                src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" 
+                alt="מטבחי דניאל" 
+                className={`transition-all duration-300 ${
+                  scrolled ? 'h-12 w-auto' : 'h-20 w-auto'
+                } ml-4`} 
+              />
+            </a>
+            <div className="flex space-x-2 space-x-reverse">
+              <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
+                <Facebook size={18} className="w-8 h-8" />
               </a>
-              <div className="flex space-x-2 space-x-reverse">
-                <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
-                  <Facebook size={18} className="w-8 h-8" />
-                </a>
-                <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
-                  <Instagram size={18} className="w-8 h-8" />
-                </a>
-              </div>
+              <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
+                <Instagram size={18} className="w-8 h-8" />
+              </a>
             </div>
           </div>
-          
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 space-x-reverse">
               <a href="#home" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>בית</a>
@@ -98,7 +91,6 @@ const Navbar = () => {
               <a href="#about" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>אודות</a>
               <a href="#services" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>שירותים</a>
               
-              {/* Contact menu with dropdown */}
               <div className="relative contact-menu-container">
                 <button 
                   onClick={() => setShowContact(!showContact)} 
@@ -125,8 +117,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
       {isOpen && <div className="md:hidden bg-black/95">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#home" onClick={() => setIsOpen(false)} className="text-white hover:text-kitchen-accent block px-3 py-2 rounded-md text-base font-medium">
