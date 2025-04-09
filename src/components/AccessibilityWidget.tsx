@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   Moon, 
@@ -12,7 +13,7 @@ import {
   MonitorSmartphone,
   AudioLines,
   Focus,
-  Wheelchair
+  Accessibility
 } from 'lucide-react';
 import { 
   Dialog,
@@ -97,7 +98,7 @@ const AccessibilityWidget = () => {
         className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform duration-300 hover:scale-110"
         aria-label="הגדרות נגישות"
       >
-        <Wheelchair className="h-6 w-6" />
+        <Accessibility className="h-6 w-6" />
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
