@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
-  Eye, 
   Moon, 
   Sun, 
   Type, 
@@ -13,7 +11,8 @@ import {
   AlignCenter,
   MonitorSmartphone,
   AudioLines,
-  Focus
+  Focus,
+  Wheelchair
 } from 'lucide-react';
 import { 
   Dialog,
@@ -38,12 +37,10 @@ const AccessibilityWidget = () => {
   const [screenReader, setScreenReader] = useState(false);
   const [focusVisible, setFocusVisible] = useState(false);
 
-  // Apply font size change
   useEffect(() => {
     document.documentElement.style.fontSize = `${fontSize}%`;
   }, [fontSize]);
 
-  // Apply high contrast
   useEffect(() => {
     if (highContrast) {
       document.documentElement.classList.add('high-contrast');
@@ -52,7 +49,6 @@ const AccessibilityWidget = () => {
     }
   }, [highContrast]);
 
-  // Apply animation disable
   useEffect(() => {
     if (disableAnimations) {
       document.documentElement.classList.add('reduce-motion');
@@ -61,7 +57,6 @@ const AccessibilityWidget = () => {
     }
   }, [disableAnimations]);
 
-  // Apply keyboard navigation
   useEffect(() => {
     if (keyboardNavigation) {
       document.documentElement.classList.add('keyboard-navigation');
@@ -70,7 +65,6 @@ const AccessibilityWidget = () => {
     }
   }, [keyboardNavigation]);
 
-  // Apply screen reader optimization
   useEffect(() => {
     if (screenReader) {
       document.documentElement.classList.add('screen-reader-optimize');
@@ -79,7 +73,6 @@ const AccessibilityWidget = () => {
     }
   }, [screenReader]);
 
-  // Apply focus visible
   useEffect(() => {
     if (focusVisible) {
       document.documentElement.classList.add('focus-visible-enabled');
@@ -88,7 +81,6 @@ const AccessibilityWidget = () => {
     }
   }, [focusVisible]);
 
-  // Reset all settings
   const resetSettings = () => {
     setFontSize(100);
     setHighContrast(false);
@@ -105,7 +97,7 @@ const AccessibilityWidget = () => {
         className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform duration-300 hover:scale-110"
         aria-label="הגדרות נגישות"
       >
-        <Eye className="h-6 w-6" />
+        <Wheelchair className="h-6 w-6" />
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -191,7 +183,7 @@ const AccessibilityWidget = () => {
                       onCheckedChange={setFocusVisible}
                     />
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">הדגשה ברורה של האלמנט הממוקד בעת שימוש במקלדת</p>
+                  <p className="text-xs text-gray-500 mt-1">הדגשה ברורה של האלמנט המarked בעת שימוש במקלדת</p>
                 </div>
               </div>
             </TabsContent>

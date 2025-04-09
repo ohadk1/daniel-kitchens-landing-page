@@ -1,7 +1,7 @@
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Gallery from "../components/Gallery";
+import ProjectGallery from "../components/ProjectGallery";
 import About from "../components/About";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
@@ -19,7 +19,7 @@ const Index = () => {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Gallery />
+        <ProjectGallery />
         <About />
         <Services />
         <Testimonials />

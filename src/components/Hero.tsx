@@ -1,3 +1,4 @@
+
 import { ArrowLeft } from 'lucide-react';
 const Hero = () => {
   return <section id="home" className="relative h-screen">
@@ -10,14 +11,14 @@ const Hero = () => {
       <div className="relative h-full flex flex-col justify-center items-center text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center animate-fade-in mt-32">
           <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-32 mx-auto mb-6" />
-          
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium">
-              לקבלת הצעת מחיר
-            </a>
-          </div>
         </div>
+      </div>
+      
+      {/* Quote button at the bottom of the image */}
+      <div className="absolute bottom-24 left-0 right-0 flex justify-center">
+        <a href="https://wa.me/972542395502?text=היי%20אני%20מעוניין%2Fת%20לקבל%20הצעת%20מחיר" target="_blank" rel="noopener noreferrer" className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium">
+          לקבלת הצעת מחיר
+        </a>
       </div>
       
       {/* Scroll indicator */}
