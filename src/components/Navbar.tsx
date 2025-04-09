@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook } from 'lucide-react';
 
@@ -27,11 +28,26 @@ const ContactMenu = () => {
       </div>
     </div>;
 };
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Remove scrolled state and scroll event listener
+  // Add scroll event listener to track scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   // Close contact menu when clicking outside
   useEffect(() => {
@@ -44,21 +60,31 @@ const Navbar = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showContact]);
-  return <nav style={{
-    top: '0'
-  }} className="fixed w-full z-30 bg-[#ccc4b4]">
+
+  return (
+    <nav 
+      className={`fixed w-full z-30 transition-all duration-300 ${
+        scrolled ? 'bg-black/95 shadow-md py-2' : 'bg-transparent py-4'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4 space-x-reverse">
             <div className="flex-shrink-0 flex items-center">
               <a href="#" className="flex items-center">
-                <img src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" alt="מטבחי דניאל" className="h-16 w-auto ml-4" />
+                <img 
+                  src="/lovable-uploads/bbd4ef99-8b93-4f8f-93be-1923b1c60b50.png" 
+                  alt="מטבחי דניאל" 
+                  className={`transition-all duration-300 ${
+                    scrolled ? 'h-12 w-auto' : 'h-20 w-auto'
+                  } ml-4`} 
+                />
               </a>
               <div className="flex space-x-2 space-x-reverse">
-                <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className="hover:text-kitchen-accent transition-colors">
+                <a href="https://www.facebook.com/DanielKitchensLTD" target="_blank" rel="noopener noreferrer" aria-label="פייסבוק" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
                   <Facebook size={18} className="w-8 h-8" />
                 </a>
-                <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className="hover:text-kitchen-accent transition-colors">
+                <a href="https://www.instagram.com/daniel_kitchens_ltd/" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent`}>
                   <Instagram size={18} className="w-8 h-8" />
                 </a>
               </div>
@@ -67,14 +93,17 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 space-x-reverse">
-              <a href="#home" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">בית</a>
-              <a href="#gallery" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">גלריה</a>
-              <a href="#about" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">אודות</a>
-              <a href="#services" className="text-black hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium">שירותים</a>
+              <a href="#home" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>בית</a>
+              <a href="#gallery" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>גלריה</a>
+              <a href="#about" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>אודות</a>
+              <a href="#services" className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} hover:text-kitchen-accent px-3 py-2 rounded-md text-lg font-medium`}>שירותים</a>
               
               {/* Contact menu with dropdown */}
               <div className="relative contact-menu-container">
-                <button onClick={() => setShowContact(!showContact)} className="px-3 py-2 rounded-md text-lg font-medium focus:outline-black text-zinc-950">
+                <button 
+                  onClick={() => setShowContact(!showContact)} 
+                  className={`transition-colors ${scrolled ? 'text-white' : 'text-black'} px-3 py-2 rounded-md text-lg font-medium focus:outline-black hover:text-kitchen-accent`}
+                >
                   צור קשר
                 </button>
                 {showContact && <ContactMenu />}
@@ -86,7 +115,11 @@ const Navbar = () => {
             </div>
           </div>
           <div className="md:hidden">
-            <button type="button" onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-white">
+            <button 
+              type="button" 
+              onClick={() => setIsOpen(!isOpen)} 
+              className={`inline-flex items-center justify-center p-2 rounded-md ${scrolled ? 'text-white' : 'text-black'}`}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -122,6 +155,8 @@ const Navbar = () => {
             </a>
           </div>
         </div>}
-    </nav>;
+    </nav>
+  );
 };
+
 export default Navbar;
