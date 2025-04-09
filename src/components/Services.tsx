@@ -13,7 +13,7 @@ const Services = () => {
   }, {
     icon: <Hammer className="text-kitchen-accent h-10 w-10" aria-hidden="true" />,
     title: "בחירת חומרים",
-    description: "מגוון רחב של חומרים איכותיים: עץ מלא, פורמייקה, פורניר, HPL ועוד"
+    description: "כל מגוון החומרי גלם והפרזול המובילים ביותר בשוק, תוך כדי שימוש בטכנולוגיות מתקדמות בכדי להגיע לתוצאה הטובה ביותר, באיכות בלתי מתפשרת"
   }, {
     icon: <Truck className="text-kitchen-accent h-10 w-10" aria-hidden="true" />,
     title: "הובלה והתקנה",
@@ -27,6 +27,7 @@ const Services = () => {
     title: "אחריות ושירות",
     description: "אחריות מלאה על כל מטבח ושירות אדיב ומקצועי גם לאחר ההתקנה"
   }];
+  
   return <section id="services" className="py-20 bg-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">השירותים שלנו</h2>
