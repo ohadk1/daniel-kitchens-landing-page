@@ -3,31 +3,35 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const kitchenImages = [
-  // ... (השאר את מערך kitchenImages כמו שהוא)
+  // מערך התמונות נשאר כפי שהוא
 ];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [visibleImages, setVisibleImages] = useState(6); // Initially show 6 images
+  const [visibleImages, setVisibleImages] = useState(6);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
     document.body.style.overflow = 'hidden';
   };
+
   const closeLightbox = () => {
     setSelectedImage(null);
     document.body.style.overflow = 'auto';
   };
+
   const goToNext = () => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage + 1) % kitchenImages.length);
     }
   };
+
   const goToPrev = () => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage - 1 + kitchenImages.length) % kitchenImages.length);
     }
   };
+
   const handleShowMore = () => {
     const newVisibleCount = Math.min(visibleImages + 6, kitchenImages.length);
     setVisibleImages(newVisibleCount);
@@ -93,6 +97,7 @@ const Gallery = () => {
               alt={kitchenImages[selectedImage].alt}
               className="max-w-full max-h-[80vh] object-contain"
             />
+            {/* הסרת הכותרת / טקסט מתחת לתמונה */}
           </div>
 
           <button
