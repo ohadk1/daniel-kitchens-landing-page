@@ -3,7 +3,31 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const kitchenImages = [
-  // מערך התמונות נשאר כפי שהוא
+  {
+    url: 'https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg',
+    alt: 'מטבח מודרני'
+  },
+  {
+    url: 'https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg',
+    alt: 'מטבח בגוון טבעי'
+  },
+  {
+    url: 'https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg',
+    alt: 'מטבח עם משטח עבודה'
+  },
+  {
+    url: 'https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg',
+    alt: 'מטבח בהתאמה אישית'
+  },
+  {
+    url: 'https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg',
+    alt: 'מטבח מודרני עם אי'
+  },
+  {
+    url: 'https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg',
+    alt: 'מטבח עם מקרר משולב'
+  }
+  // הוסף עוד פריטים לפי הצורך
 ];
 
 const Gallery = () => {
@@ -38,12 +62,9 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-[c0b8a8] bg-gray-200">
+    <section id="gallery" className="py-20 bg-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
-        <p className="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-12">
-          מבחר מהמטבחים שעיצבנו וייצרנו עבור לקוחותינו. כל מטבח מיוצר בהתאמה אישית לצרכי הלקוח ולחלל הספציפי.
-        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {kitchenImages.slice(0, visibleImages).map((image, index) => (
@@ -97,7 +118,6 @@ const Gallery = () => {
               alt={kitchenImages[selectedImage].alt}
               className="max-w-full max-h-[80vh] object-contain"
             />
-            {/* הסרת הכותרת / טקסט מתחת לתמונה */}
           </div>
 
           <button
