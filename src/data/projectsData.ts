@@ -14,8 +14,8 @@ export interface Project {
 export const kitchenProjects: Project[] = [
   {
     id: "project1",
-    title: "מטבח מודרני",
-    description: "מטבח בסגנון מודרני עם חזית לבנה וידיות נסתרות",
+    title: "",
+    description: "",
     coverImage: "https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg",
     images: [
       { url: "https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg", alt: "מטבח מודרני" },
