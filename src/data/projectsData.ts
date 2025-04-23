@@ -1,9 +1,8 @@
-
 // Define the project structure
 export interface Project {
   id: string;
-  title: string;
-  description: string;
+  title?: string; // הכותרת תישמר אך לא תוצג
+  description?: string; // אותו דבר
   coverImage: string;
   images: {
     url: string;
@@ -11,7 +10,7 @@ export interface Project {
   }[];
 }
 
-// Sample projects data - you can customize these projects
+// Projects data – no need to display title/description
 export const kitchenProjects: Project[] = [
   {
     id: "project1",
@@ -19,18 +18,9 @@ export const kitchenProjects: Project[] = [
     description: "מטבח בסגנון מודרני עם חזית לבנה וידיות נסתרות",
     coverImage: "https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg",
-        alt: "מטבח מודרני"
-      },
-      {
-        url: "https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg",
-        alt: "מטבח מודרני - זווית נוספת"
-      },
-      {
-        url: "https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg",
-        alt: "מטבח מודרני - פרטים"
-      }
+      { url: "https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg", alt: "מטבח מודרני" },
+      { url: "https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg", alt: "מטבח מודרני - זווית נוספת" },
+      { url: "https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg", alt: "מטבח מודרני - פרטים" }
     ]
   },
   {
@@ -39,14 +29,8 @@ export const kitchenProjects: Project[] = [
     description: "עיצוב מטבח בגוונים טבעיים המשלב עץ וחומרים איכותיים",
     coverImage: "https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg",
-        alt: "מטבח בגוון טבעי"
-      },
-      {
-        url: "https://i.postimg.cc/x1yr5cZ1/20221108-153941-01.jpg",
-        alt: "מטבח בגוון טבעי - זווית נוספת"
-      }
+      { url: "https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg", alt: "מטבח בגוון טבעי" },
+      { url: "https://i.postimg.cc/x1yr5cZ1/20221108-153941-01.jpg", alt: "מטבח בגוון טבעי - זווית נוספת" }
     ]
   },
   {
@@ -55,14 +39,8 @@ export const kitchenProjects: Project[] = [
     description: "מטבח מרווח עם משטח עבודה גדול ופתרונות אחסון",
     coverImage: "https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg",
-        alt: "מטבח עם משטח עבודה"
-      },
-      {
-        url: "https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg",
-        alt: "מטבח עם משטח עבודה - זווית נוספת"
-      }
+      { url: "https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg", alt: "מטבח עם משטח עבודה" },
+      { url: "https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg", alt: "מטבח עם משטח עבודה - זווית נוספת" }
     ]
   },
   {
@@ -71,14 +49,8 @@ export const kitchenProjects: Project[] = [
     description: "עיצוב מטבח מותאם אישית עם פתרונות פרקטיים",
     coverImage: "https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg",
-        alt: "מטבח בהתאמה אישית"
-      },
-      {
-        url: "https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg",
-        alt: "מטבח בהתאמה אישית - זווית נוספת"
-      }
+      { url: "https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg", alt: "מטבח בהתאמה אישית" },
+      { url: "https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg", alt: "מטבח בהתאמה אישית - זווית נוספת" }
     ]
   },
   {
@@ -87,14 +59,8 @@ export const kitchenProjects: Project[] = [
     description: "מטבח מודרני המשלב אי מרכזי לאירוח ובישול",
     coverImage: "https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg",
-        alt: "מטבח מודרני עם אי"
-      },
-      {
-        url: "https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg",
-        alt: "מטבח מודרני עם אי - זווית נוספת"
-      }
+      { url: "https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg", alt: "מטבח מודרני עם אי" },
+      { url: "https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg", alt: "מטבח מודרני עם אי - זווית נוספת" }
     ]
   },
   {
@@ -103,14 +69,8 @@ export const kitchenProjects: Project[] = [
     description: "עיצוב הכולל מקרר משולב ביחידות האחסון",
     coverImage: "https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg",
     images: [
-      {
-        url: "https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg",
-        alt: "מטבח עם מקרר משולב"
-      },
-      {
-        url: "https://i.postimg.cc/x1yr5cZ1/20221108-153941-01.jpg",
-        alt: "מטבח עם מקרר משולב - זווית נוספת"
-      }
+      { url: "https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg", alt: "מטבח עם מקרר משולב" },
+      { url: "https://i.postimg.cc/x1yr5cZ1/20221108-153941-01.jpg", alt: "מטבח עם מקרר משולב - זווית נוספת" }
     ]
   }
 ];
