@@ -32,10 +32,14 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-200">
+    <section id="gallery" className="py-20 bg-gray-200 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
+        <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">
+          מבחר מהמטבחים שעיצבנו עבור לקוחותינו. כל מטבח מיוצר בהתאמה אישית לצרכי הלקוח ולחלל הספציפי.
+        </p>
 
+        {/* הגריד ל-8 פרויקטים */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {kitchenProjects.map((project, index) => (
             <div
@@ -44,7 +48,7 @@ const Gallery = () => {
               onClick={() => openProject(index)}
             >
               <img
-                src={project.images[0].url}
+                src={`/images/${index + 1}-1.webp`} // עדכון אם הנתיב הוא local
                 alt={project.images[0].alt}
                 className="w-full h-72 object-cover"
               />
@@ -52,6 +56,7 @@ const Gallery = () => {
           ))}
         </div>
 
+        {/* לייטבוקס */}
         {selectedProjectIndex !== null && (
           <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
             <button onClick={closeProject} className="absolute top-4 right-4 text-white hover:text-kitchen-accent" aria-label="סגור">
@@ -64,7 +69,7 @@ const Gallery = () => {
 
             <div className="max-w-4xl max-h-[80vh]">
               <img
-                src={kitchenProjects[selectedProjectIndex].images[selectedImageIndex].url}
+                src={`/images/${selectedProjectIndex + 1}-${selectedImageIndex + 1}.webp`}
                 alt={kitchenProjects[selectedProjectIndex].images[selectedImageIndex].alt}
                 className="max-w-full max-h-[80vh] object-contain"
               />
