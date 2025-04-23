@@ -5,29 +5,28 @@ import { Button } from './ui/button';
 const kitchenImages = [
   {
     url: 'https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg',
-    alt: 'מטבח מודרני'
+    alt: 'מטבח מודרני',
   },
   {
     url: 'https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg',
-    alt: 'מטבח בגוון טבעי'
+    alt: 'מטבח בגוון טבעי',
   },
   {
     url: 'https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg',
-    alt: 'מטבח עם משטח עבודה'
+    alt: 'מטבח עם משטח עבודה',
   },
   {
     url: 'https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg',
-    alt: 'מטבח בהתאמה אישית'
+    alt: 'מטבח בהתאמה אישית',
   },
   {
     url: 'https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg',
-    alt: 'מטבח מודרני עם אי'
+    alt: 'מטבח מודרני עם אי',
   },
   {
     url: 'https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg',
-    alt: 'מטבח עם מקרר משולב'
-  }
-  // הוסף עוד פריטים לפי הצורך
+    alt: 'מטבח עם מקרר משולב',
+  },
 ];
 
 const Gallery = () => {
