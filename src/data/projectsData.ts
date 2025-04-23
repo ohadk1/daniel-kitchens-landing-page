@@ -12,7 +12,7 @@ export interface Project {
 export const kitchenProjects: Project[] = [
   {
     id: "project1",
-    coverImage: "/images/1-1.webp",
+    coverImage: "/images/1-4.webp",
     images: [
       { url: "/images/1-1.webp", alt: "תמונה 1-1" },
       { url: "/images/1-2.webp", alt: "תמונה 1-2" },
