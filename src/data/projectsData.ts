@@ -86,7 +86,7 @@ export const kitchenProjects: Project[] = [
   },
   {
     id: "project8",
-    coverImage: "/images/8-1.webp",
+    coverImage: "/images/8-2.webp",
     images: [
       { url: "/images/8-1.webp", alt: "תמונה 8-1" },
       { url: "/images/8-2.webp", alt: "תמונה 8-2" },
