@@ -1,15 +1,4 @@
-// projectsData.ts - מעודכן לנתיב local (public/images/...) וללא טקסטים
-
-export interface Project {
-  id: string;
-  title?: string;
-  description?: string;
-  coverImage: string;
-  images: {
-    url: string;
-    alt: string;
-  }[];
-}
+import { Project } from "@/data/projectsData";
 
 export const kitchenProjects: Project[] = [
   {
