@@ -34,29 +34,29 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-gray-200 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
-        <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">
-          מבחר מהמטבחים שעיצבנו עבור לקוחותינו. כל מטבח מיוצר בהתאמה אישית לצרכי הלקוח ולחלל הספציפי.
+        <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-4">הגלריה שלנו</h2>
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+          מבחר מהמטבחים שעיצבנו עבור לקוחותינו – כל מטבח מיוצר בהתאמה אישית לצרכי הלקוח.
         </p>
 
-        {/* הגריד ל-8 פרויקטים */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Grid of previews */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {kitchenProjects.map((project, index) => (
             <div
               key={project.id}
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+              className="aspect-square overflow-hidden rounded-xl shadow-lg group cursor-pointer transition-transform duration-300 hover:scale-105"
               onClick={() => openProject(index)}
             >
               <img
-                src={`/images/${index + 1}-1.webp`} // עדכון אם הנתיב הוא local
+                src={`/images/${index + 1}-1.webp`}
                 alt={project.images[0].alt}
-                className="w-full h-72 object-cover"
+                className="w-full h-full object-cover transition duration-300 group-hover:scale-110"
               />
             </div>
           ))}
         </div>
 
-        {/* לייטבוקס */}
+        {/* Lightbox */}
         {selectedProjectIndex !== null && (
           <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
             <button onClick={closeProject} className="absolute top-4 right-4 text-white hover:text-kitchen-accent" aria-label="סגור">
@@ -71,7 +71,7 @@ const Gallery = () => {
               <img
                 src={`/images/${selectedProjectIndex + 1}-${selectedImageIndex + 1}.webp`}
                 alt={kitchenProjects[selectedProjectIndex].images[selectedImageIndex].alt}
-                className="max-w-full max-h-[80vh] object-contain"
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
             </div>
 
