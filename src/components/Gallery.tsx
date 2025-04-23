@@ -1,133 +1,81 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { Button } from './ui/button';
-
-const kitchenImages = [
-  {
-    url: 'https://i.postimg.cc/rmpLKMQF/20220922-111717-Copy.jpg',
-    alt: 'מטבח מודרני',
-  },
-  {
-    url: 'https://i.postimg.cc/FRnXS8Bb/20220922-111737.jpg',
-    alt: 'מטבח בגוון טבעי',
-  },
-  {
-    url: 'https://i.postimg.cc/0jMR0nTT/20220922-111747.jpg',
-    alt: 'מטבח עם משטח עבודה',
-  },
-  {
-    url: 'https://i.postimg.cc/XqRMHF3p/20220922-111754.jpg',
-    alt: 'מטבח בהתאמה אישית',
-  },
-  {
-    url: 'https://i.postimg.cc/wxZdjKJg/20220922-111801.jpg',
-    alt: 'מטבח מודרני עם אי',
-  },
-  {
-    url: 'https://i.postimg.cc/7YzrCBM7/20220922-111808.jpg',
-    alt: 'מטבח עם מקרר משולב',
-  },
-];
+import { kitchenProjects } from '@/data/projectsData';
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [visibleImages, setVisibleImages] = useState(6);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
 
-  const openLightbox = (index: number) => {
-    setSelectedImage(index);
+  const openProject = (projectIndex: number) => {
+    setSelectedProjectIndex(projectIndex);
+    setSelectedImageIndex(0);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
+  const closeProject = () => {
+    setSelectedProjectIndex(null);
     document.body.style.overflow = 'auto';
   };
 
-  const goToNext = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % kitchenImages.length);
+  const goToNextImage = () => {
+    if (selectedProjectIndex !== null) {
+      const images = kitchenProjects[selectedProjectIndex].images;
+      setSelectedImageIndex((selectedImageIndex + 1) % images.length);
     }
   };
 
-  const goToPrev = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((selectedImage - 1 + kitchenImages.length) % kitchenImages.length);
+  const goToPrevImage = () => {
+    if (selectedProjectIndex !== null) {
+      const images = kitchenProjects[selectedProjectIndex].images;
+      setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length);
     }
-  };
-
-  const handleShowMore = () => {
-    const newVisibleCount = Math.min(visibleImages + 6, kitchenImages.length);
-    setVisibleImages(newVisibleCount);
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gray-200">
+    <section className="py-20 bg-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-kitchen-DEFAULT mb-12">הגלריה שלנו</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {kitchenImages.slice(0, visibleImages).map((image, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {kitchenProjects.map((project, index) => (
             <div
-              key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
-              onClick={() => openLightbox(index)}
+              key={project.id}
+              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+              onClick={() => openProject(index)}
             >
               <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                src={project.images[0].url}
+                alt={project.images[0].alt}
+                className="w-full h-72 object-cover"
               />
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          {visibleImages < kitchenImages.length && (
-            <Button
-              onClick={handleShowMore}
-              className="bg-kitchen-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md text-lg font-medium"
-            >
-              הצג עוד
-            </Button>
-          )}
-        </div>
-      </div>
+        {selectedProjectIndex !== null && (
+          <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
+            <button onClick={closeProject} className="absolute top-4 right-4 text-white hover:text-kitchen-accent" aria-label="סגור">
+              <X size={32} />
+            </button>
 
-      {selectedImage !== null && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-kitchen-accent"
-            aria-label="סגור"
-          >
-            <X size={32} />
-          </button>
+            <button onClick={goToPrevImage} className="absolute left-4 text-white hover:text-kitchen-accent" aria-label="תמונה קודמת">
+              <ChevronLeft size={40} />
+            </button>
 
-          <button
-            onClick={goToPrev}
-            className="absolute left-4 text-white hover:text-kitchen-accent"
-            aria-label="תמונה קודמת"
-          >
-            <ChevronLeft size={40} />
-          </button>
+            <div className="max-w-4xl max-h-[80vh]">
+              <img
+                src={kitchenProjects[selectedProjectIndex].images[selectedImageIndex].url}
+                alt={kitchenProjects[selectedProjectIndex].images[selectedImageIndex].alt}
+                className="max-w-full max-h-[80vh] object-contain"
+              />
+            </div>
 
-          <div className="max-w-4xl max-h-[80vh]">
-            <img
-              src={kitchenImages[selectedImage].url}
-              alt={kitchenImages[selectedImage].alt}
-              className="max-w-full max-h-[80vh] object-contain"
-            />
+            <button onClick={goToNextImage} className="absolute right-4 text-white hover:text-kitchen-accent" aria-label="תמונה הבאה">
+              <ChevronRight size={40} />
+            </button>
           </div>
-
-          <button
-            onClick={goToNext}
-            className="absolute right-4 text-white hover:text-kitchen-accent"
-            aria-label="תמונה הבאה"
-          >
-            <ChevronRight size={40} />
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };
