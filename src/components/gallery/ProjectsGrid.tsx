@@ -10,7 +10,7 @@ interface ProjectsGridProps {
 
 const ProjectsGrid = ({ projects, onProjectClick, className = "" }: ProjectsGridProps) => {
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${className}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ${className}`}>
       {projects.map((project) => (
         <ProjectCard 
           key={project.id} 
