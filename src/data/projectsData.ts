@@ -1,4 +1,13 @@
-import { Project } from "@/data/projectsData";
+
+// Define and export the Project interface
+export interface Project {
+  id: string;
+  coverImage: string;
+  images: {
+    url: string;
+    alt: string;
+  }[];
+}
 
 export const kitchenProjects: Project[] = [
   {
