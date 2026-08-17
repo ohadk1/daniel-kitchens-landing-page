@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette carried over from the previous site — do not change these values. */
+  --color-kitchen: #ccc4b4;
+  --color-kitchen-deep: #c0b8a8;
+  --color-kitchen-wood: #8e6f4a;
+  --color-kitchen-light: #f6f6f7;
+  --color-kitchen-gray: #8e9196;
+  --color-kitchen-section: #e5e7eb;
+
+  /* Derived tones. `ink` is the text color used on every beige surface: white on
+     #ccc4b4 is ~1.8:1 and fails WCAG, ink is ~9:1. */
+  --color-kitchen-ink: #2f2a22;
+  --color-kitchen-charcoal: #1c1a17;
+  --color-kitchen-muted: #5b5348;
+
+  --font-sans: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-rubik), var(--font-heebo), ui-sans-serif, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    /* No `scroll-behavior: smooth` here — Lenis owns scrolling and requires the
+       native one to stay off, or anchor jumps double-ease. */
+    /* `clip` rather than `hidden`: reveal animations start offset on the inline
+       axis, and `hidden` would both create a scrollbar container and break
+       position: sticky. */
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--color-kitchen-light);
+    color: var(--color-kitchen-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-kitchen-wood);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-kitchen);
+    color: var(--color-kitchen-ink);
+  }
+}
+
+@layer utilities {
+  /* Ken-Burns drift for the hero frames. */
+  @keyframes kenburns {
+    from {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    to {
+      transform: scale(1.12) translate3d(1.5%, -1.5%, 0);
+    }
+  }
+
+  .animate-kenburns {
+    animation: kenburns 18s ease-out forwards;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Thin rule used under section headings. */
+  .heading-rule::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 3px;
+    margin-top: 1rem;
+    background: linear-gradient(
+      to left,
+      var(--color-kitchen-wood),
+      var(--color-kitchen)
+    );
+    border-radius: 999px;
+  }
+
+  .heading-rule-center::after {
+    margin-inline: auto;
+  }
+}
+
+/* The accessibility widget toggles these on <html>. */
+html[data-contrast="high"] {
+  filter: contrast(1.35) saturate(1.15);
+}
+
+html[data-motion="off"] *,
+html[data-motion="off"] *::before,
+html[data-motion="off"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-focus="visible"] :is(a, button, [role="button"], input, select):focus {
+  outline: 3px solid var(--color-kitchen-wood);
+  outline-offset: 3px;
+}
+
+/* Reveal animations start at opacity:0 in the SSR markup; without JS they would
+   never fade in, so the page must fall back to fully visible. */
+@media screen {
+  .no-js [style*="opacity:0"],
+  .no-js [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
