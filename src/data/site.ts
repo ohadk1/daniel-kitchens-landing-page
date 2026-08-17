@@ -7,7 +7,9 @@ export const site = {
   footerBlurb:
     'מטבחי דניאל - נגריית מטבחי יוקרה המתמחה בתכנון, ייצור והתקנה של מטבחים מעוצבים באיכות הגבוהה ביותר.',
   foundedYear: 1998,
-  url: 'https://danielkitchens.com',
+  /* Live address. Swap to the custom domain once it is pointed at Vercel — this feeds
+     metadataBase, the JSON-LD, the sitemap and robots.txt. */
+  url: 'https://daniel-kitchens.vercel.app',
 } as const;
 
 export const contact = {
