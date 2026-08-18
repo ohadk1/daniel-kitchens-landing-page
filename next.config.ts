@@ -21,7 +21,12 @@ const csp = [
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920, 2048],
+    /* Up to 3840 so the lightbox stays sharp on 4K and retina screens — the gallery is
+       the whole selling point here, so detail wins over bytes. */
+    deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920, 2048, 2560, 3840],
+    /* Next 16 only allows qualities listed here; anything else is silently coerced to
+       the closest one. 92 is the lightbox (near-original), 80 the grid thumbnails. */
+    qualities: [75, 80, 92],
   },
   poweredByHeader: false,
   async headers() {

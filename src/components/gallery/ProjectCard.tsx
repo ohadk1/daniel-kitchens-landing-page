@@ -27,6 +27,7 @@ export default function ProjectCard({ project, index, onOpen }: Props) {
         fill
         loading="lazy"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        quality={80}
         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform group-hover:scale-105 group-focus-visible:scale-105"
       />
 

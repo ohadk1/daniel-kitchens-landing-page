@@ -171,7 +171,10 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
                         src={current.url}
                         alt={current.alt}
                         fill
+                        /* The lightbox is where clients judge the carpentry, so it is
+                           served near-original: full viewport width at quality 92. */
                         sizes="100vw"
+                        quality={92}
                         loading="lazy"
                         draggable={false}
                         className="select-none object-contain"
@@ -189,6 +192,7 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
                           alt=""
                           fill
                           sizes="100vw"
+                          quality={92}
                           loading="lazy"
                           className="object-contain"
                         />
@@ -217,6 +221,13 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
                     </>
                   )}
                 </div>
+
+                {/* Sits between the frame and the thumbnails: the client reads it while
+                    looking at the kitchen, and it never competes with the image itself.
+                    Hidden on short viewports so the frame keeps its height. */}
+                <p className="hidden shrink-0 px-4 pb-1 text-center text-sm leading-relaxed text-white/75 sm:px-6 md:block lg:mx-auto lg:max-w-4xl">
+                  {active.description}
+                </p>
 
                 <div className="shrink-0 overflow-x-auto px-4 py-4 sm:px-6">
                   {/* min-w-full + w-max centres a short strip without clipping a long one. */}

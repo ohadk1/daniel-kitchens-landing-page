@@ -106,6 +106,7 @@ export default function Hero() {
                 alt={activeSlide.alt}
                 fill
                 sizes="100vw"
+                quality={80}
                 {...(activeSlide.url === heroSlides[0].url
                   ? { preload: true, fetchPriority: 'high' as const }
                   : /* Eager, but never preloaded — only slide 1 owns a <link rel=preload>.
