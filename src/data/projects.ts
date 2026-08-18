@@ -151,6 +151,31 @@ export const kitchenProjects: Project[] = [
     ].map(([alt, file]) => [file, alt] as [string, string]),
     '8-2.webp',
   ),
+  /* Copy condensed from the description the client supplied with the photos. Kept the
+     substance — Sahara acrylic, the marble island, CNC, the integrated appliances and
+     the vitrine — and dropped the social-post framing it was written in. */
+  build(
+    'sahara',
+    'סהרה',
+    'אקריל בגוון חול ואי שיש דרמטי',
+    'מטבח בגוון סהרה — גוון רך שנולד מהחולות ומהאור שנופל על הדיונות, ועוטף את החלל ' +
+      'בחמימות שקטה. מולו עומד האי, ובו שיש דרמטי עם גידים חומים וזהובים; הניגוד בין ' +
+      'הרוך של הסהרה לעוצמה של האבן הוא מה שנותן למטבח הזה נשמה. החזיתות אקריל LG Chem, ' +
+      'חומר פרימיום עמיד במיוחד, עם ידיות במה בתואם מלא לקו נקי וזורם. המקרר והמדיח ' +
+      'אינטגרליים ונעלמים לחלוטין בתוך הארונות, לצד ויטרינה במסגרת זהב וזכוכית ברונזה ' +
+      'כהה. כל החיתוכים, הכרסומים והנגרות יוצרו במכונות CNC מתקדמות — דיוק של מילימטר ' +
+      'למילימטר בכל חזית ובכל טקסטורה. תוכנן ובוצע בשיתוף פעולה מלא עם הלקוחה, ' +
+      'מהתכנון הראשוני ועד ההתקנה האחרונה.',
+    [
+      ['האי, הוויטרינה המוארת וקיר הארונות', '9-1.webp'],
+      ['מבט לאורך האי אל פינת הבישול', '9-2.webp'],
+      ['כיסאות הבר ומפל השיש בקצה האי', '9-3.webp'],
+      ['תקריב משטח השיש המעורק והכיריים', '9-4.webp'],
+      ['קיר הארונות עם המכשירים האינטגרליים', '9-5.webp'],
+    ].map(([alt, file]) => [file, alt] as [string, string]),
+    '9-1.webp',
+    'tall',
+  ),
   /* Not a kitchen. It is in the client's gallery because the same workshop builds the
      rest of the house, and the old site filed it under "kitchen with a central island"
      by mistake. */
