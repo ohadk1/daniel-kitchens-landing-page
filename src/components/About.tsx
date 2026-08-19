@@ -104,8 +104,8 @@ export default function About() {
               className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-xl will-change-transform"
             >
               <Image
-                src="/images/2-1.webp"
-                alt="מטבח יוקרה בהתאמה אישית מתוצרת מטבחי דניאל"
+                src="/images/sahara-1.webp"
+                alt="מטבח סהרה — האי, הוויטרינה המוארת וכיסאות הבר"
                 fill
                 loading="lazy"
                 sizes="(min-width: 1024px) 45vw, (min-width: 640px) 60vw, 90vw"
@@ -116,8 +116,8 @@ export default function About() {
             <div className="relative -mt-14 flex justify-start sm:mt-0 sm:block">
               <div className="relative aspect-square w-36 overflow-hidden rounded-2xl shadow-2xl ring-4 ring-kitchen-wood/70 sm:absolute sm:-bottom-10 sm:-start-8 sm:w-52 lg:w-56">
                 <Image
-                  src="/images/5-1.webp"
-                  alt="פרט נגרות ופרזול במטבח מעוצב"
+                  src="/images/sahara-2.webp"
+                  alt="מטבח סהרה — תקריב משטח השיש המעורק"
                   fill
                   loading="lazy"
                   sizes="(min-width: 1024px) 220px, (min-width: 640px) 208px, 144px"

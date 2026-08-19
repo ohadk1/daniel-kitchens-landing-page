@@ -36,7 +36,25 @@ export const metadata: Metadata = {
     locale: 'he_IL',
     url: site.url,
     siteName: site.name,
-    images: [{ url: '/images/hero-0.webp', width: 1536, height: 864, alt: site.tagline }],
+    /* JPEG, not WebP: WhatsApp and Facebook do not reliably render WebP in a link
+       preview, which is why the card came up without an image. 1200x630 is the size
+       both expect, and the absolute URL is what their crawlers resolve. */
+    images: [
+      {
+        url: `${site.url}/og-image.jpg`,
+        secureUrl: `${site.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: `${site.name} - ${site.tagline}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} - ${site.tagline}`,
+    description: site.description,
+    images: [`${site.url}/og-image.jpg`],
   },
   robots: { index: true, follow: true },
 };
@@ -52,7 +70,7 @@ const jsonLd = {
   legalName: site.legalName,
   description: site.description,
   url: site.url,
-  image: `${site.url}/images/hero-0.webp`,
+  image: `${site.url}/og-image.jpg`,
   logo: `${site.url}/logo-main.png`,
   foundingDate: String(site.foundedYear),
   email: contact.email,
