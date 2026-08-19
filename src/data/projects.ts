@@ -227,7 +227,6 @@ export const kitchenProjects: Project[] = [
       ['המטבח ודלפק הסועדים', 'mono-1.webp'],
       ['דלפק הסועדים מול החלון', 'mono-2.webp'],
       ['קיר הארונות וגומחת התצוגה', 'mono-3.webp'],
-      ['גומחת התצוגה השחורה', 'mono-5.webp'],
     ].map(([alt, file]) => [file, alt] as [string, string]),
     'mono-1.webp',
     'wide',
@@ -369,34 +368,6 @@ export const kitchenProjects: Project[] = [
     'wide',
   ),
 
-  build(
-    'white-u',
-    'לבן בצורת U',
-    'שלושה קירות, דלפק סועדים ומשטח שחור',
-    'מטבח לבן ללא ידיות בצורת U שנסגר בדלפק סועדים, עם משטח שחור וחיפוי אבן בהיר.',
-    [
-      'מטבח לבן בצורת U שמנצל את שלושת הקירות ונסגר בדלפק סועדים — תכנון שמוציא את המקסימום מחלל שאינו גדול.',
-      'החזיתות ללא ידיות עם פרופיל שקוע, והמשטח שחור בניגוד מלא ללבן. חיפוי אבן בהיר רץ מאחורי משטח העבודה ומרכך את המעבר.',
-      'טור התנורים משולב בגובה העיניים, והרצפה בגימור שיש מלוטש מחזירה את האור בחזרה אל החלל.',
-    ],
-    [
-      { label: 'חזיתות', value: 'לבן, ללא ידיות' },
-      { label: 'משטח', value: 'שחור' },
-      { label: 'תכנון', value: 'צורת U + דלפק סועדים' },
-      { label: 'חיפוי', value: 'אבן בהירה' },
-      { label: 'מכשירים', value: 'טור תנורים בגובה העיניים' },
-    ],
-    [
-      ['המטבח ודלפק הסועדים', '5-1.webp'],
-      ['צורת ה-U ומשטח העבודה השחור', '5-2.webp'],
-      ['תקריב משטח העבודה ופינת הבישול', '5-3.webp'],
-      ['פינת הכיור והברזייה השחורה', '5-4.webp'],
-    ].map(([alt, file]) => [file, alt] as [string, string]),
-    '5-1.webp',
-  ),
-
-  /* Copy condensed from the description the client supplied with these photos. Kept the
-     substance and dropped the social-post framing it was written in. */
   build(
     'sahara',
     'סהרה',
