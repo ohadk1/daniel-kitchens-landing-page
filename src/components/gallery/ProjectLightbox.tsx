@@ -12,6 +12,8 @@ import type { Project } from '@/data/projects';
 interface Props {
   project: Project | null;
   open: boolean;
+  /** Frame to open on — the grid tile the visitor clicked. */
+  startAt?: number;
   onClose: () => void;
 }
 
@@ -24,7 +26,7 @@ const slideVariants = {
   exit: (direction: number) => ({ opacity: 0, x: direction > 0 ? 64 : -64 }),
 };
 
-export default function ProjectLightbox({ project, open, onClose }: Props) {
+export default function ProjectLightbox({ project, open, startAt = 0, onClose }: Props) {
   const reduced = useStillMotion();
   // Held so the exit animation still has content to render after the parent clears `project`.
   const [active, setActive] = useState<Project | null>(project);
@@ -37,9 +39,9 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
   useEffect(() => {
     if (!project || !open) return;
     setActive(project);
-    setIndex(0);
+    setIndex(startAt);
     setDirection(0);
-  }, [project, open]);
+  }, [project, open, startAt]);
 
   const total = active?.images.length ?? 0;
 
@@ -153,7 +155,7 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
                 <div className="relative min-h-0 flex-1 px-2 pb-2 sm:px-14 lg:px-20">
                   <AnimatePresence initial={false} custom={direction}>
                     <motion.div
-                      key={`${active.id}-${index}`}
+                      key={`${active.slug}-${index}`}
                       custom={direction}
                       variants={reduced ? undefined : slideVariants}
                       initial={reduced ? { opacity: 0 } : 'enter'}
@@ -222,11 +224,10 @@ export default function ProjectLightbox({ project, open, onClose }: Props) {
                   )}
                 </div>
 
-                {/* Sits between the frame and the thumbnails: the client reads it while
-                    looking at the kitchen, and it never competes with the image itself.
-                    Hidden on short viewports so the frame keeps its height. */}
+                {/* Caption describes the frame on screen, not the project — the project
+                    copy already sits above the grid on the page. */}
                 <p className="hidden shrink-0 px-4 pb-1 text-center text-sm leading-relaxed text-white/75 sm:px-6 md:block lg:mx-auto lg:max-w-4xl">
-                  {active.description}
+                  {active.images[index]?.alt}
                 </p>
 
                 <div className="shrink-0 overflow-x-auto px-4 py-4 sm:px-6">

@@ -1,12 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
 import { useStillMotion } from '@/lib/useStillMotion';
 import SectionReveal from '@/components/SectionReveal';
 import ProjectCard from './ProjectCard';
-import ProjectLightbox from './ProjectLightbox';
 import { fadeIn, fadeUp, stagger, viewportOnce } from '@/lib/animations';
 import { gallery } from '@/data/content';
 import { kitchenProjects, type Project } from '@/data/projects';
@@ -27,13 +25,6 @@ function spanClass(project: Project, isLast: boolean) {
 
 export default function ProjectGallery() {
   const reduced = useStillMotion();
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const [open, setOpen] = useState(false);
-
-  const openProject = (project: Project) => {
-    setActiveProject(project);
-    setOpen(true);
-  };
 
   return (
     <section id="gallery" className="py-20 lg:py-28 bg-kitchen-section">
@@ -56,15 +47,11 @@ export default function ProjectGallery() {
         >
           {kitchenProjects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.slug}
               variants={reduced ? fadeIn : fadeUp}
               className={spanClass(project, index === kitchenProjects.length - 1)}
             >
-              <ProjectCard
-                project={project}
-                index={index}
-                onOpen={() => openProject(project)}
-              />
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>
@@ -85,11 +72,6 @@ export default function ProjectGallery() {
         </SectionReveal>
       </div>
 
-      <ProjectLightbox
-        project={activeProject}
-        open={open}
-        onClose={() => setOpen(false)}
-      />
     </section>
   );
 }
