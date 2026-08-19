@@ -42,9 +42,9 @@ export const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICom
 )}`;
 
 export const navLinks = [
-  { href: '#home', label: 'בית' },
-  { href: '#gallery', label: 'גלריה' },
-  { href: '#process', label: 'תהליך העבודה' },
-  { href: '#about', label: 'אודות' },
-  { href: '#services', label: 'שירותים' },
+  { href: '/#home', label: 'בית' },
+  { href: '/#gallery', label: 'גלריה' },
+  { href: '/#process', label: 'תהליך העבודה' },
+  { href: '/#about', label: 'אודות' },
+  { href: '/#services', label: 'שירותים' },
 ] as const;

@@ -32,7 +32,7 @@ const contactRows: ContactRow[] = [
   { label: contact.shimrit.label, number: contact.shimrit.number, tel: contact.shimrit.tel },
 ];
 
-const sectionIds = navLinks.map((l) => l.href.slice(1));
+const sectionIds = navLinks.map((l) => l.href.replace('/#', ''));
 
 function WhatsAppGlyph({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -228,8 +228,8 @@ export default function Navbar() {
           className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-1 sm:px-6 lg:px-8"
         >
           <a
-            href="#home"
-            aria-label="מטבחי דניאל - חזרה לראש הדף"
+            href="/"
+            aria-label="מטבחי דניאל - חזרה לדף הבית"
             className={`flex shrink-0 items-center transition-all duration-300 ${
               scrolled ? 'h-16' : 'h-20'
             }`}
@@ -255,7 +255,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <ul className="hidden flex-wrap items-center gap-x-1 gap-y-0.5 lg:flex">
             {navLinks.map((link) => {
-              const id = link.href.slice(1);
+              const id = link.href.replace('/#', '');
               const isActive = active === id;
               return (
                 <li key={link.href} className="relative">
