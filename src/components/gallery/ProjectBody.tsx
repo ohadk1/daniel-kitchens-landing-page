@@ -50,6 +50,17 @@ export default function ProjectBody({ project }: { project: Project }) {
                 ))}
               </dl>
 
+              {project.credits && (
+                <dl className="mt-5 border-t border-kitchen-line pt-4">
+                  {project.credits.map((credit) => (
+                    <div key={credit.label} className="flex gap-4 py-1.5">
+                      <dt className="w-28 shrink-0 text-sm text-kitchen-muted">{credit.label}</dt>
+                      <dd className="text-sm text-kitchen-ink">{credit.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+
               <a
                 href={whatsappUrl}
                 target="_blank"

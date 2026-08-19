@@ -16,6 +16,8 @@ export interface Project {
   body: string[];
   /** Spec rows shown on the project page. */
   specs: { label: string; value: string }[];
+  /** Photography / design credit lines, when the project has them. */
+  credits?: { label: string; value: string }[];
   /** The frame used for the card and the page hero. */
   coverImage: string;
   coverAlt: string;
@@ -36,6 +38,7 @@ const build = (
   files: [string, string][],
   cover: string,
   span?: Project['span'],
+  credits?: Project['credits'],
 ): Project => {
   const images = files.map(([file, altText]) => ({
     url: `/images/${file}`,
@@ -53,6 +56,7 @@ const build = (
     coverImage,
     coverAlt: images.find((image) => image.url === coverImage)?.alt ?? images[0].alt,
     span,
+    credits,
     images,
   };
 };
@@ -148,32 +152,6 @@ export const kitchenProjects: Project[] = [
       ['ארבעה מבטים על המטבח', 'vintage-9.webp'],
     ].map(([alt, file]) => [file, alt] as [string, string]),
     'vintage-1.webp',
-    'wide',
-  ),
-
-  build(
-    'calacatta',
-    'קלקטה',
-    'שמנת מבריק, אי אגוז ושיש קלקטה',
-    'קיר ארונות בגימור לכה מבריק, אי בחיפוי אגוז, ושיש קלקטה זהוב שרץ מהמשטח אל הגב ואל צדי האי.',
-    [
-      'מטבח שבנוי על שלושה חומרים בלבד, וכל אחד מהם מקבל את מלוא הבמה. קיר הארונות בגימור לכה בגוון שמנת, מבריק ורציף, בלי ידיות שישברו את הקו — האור נע עליו כמו על משטח מים.',
-      'מולו עומד האי, ובו חיפוי עץ אגוז בפסים אופקיים שמכניס חום אל תוך החלל הבהיר. משטח הקלקטה עם הגידים הזהובים נמשך מעל האי, עולה אל גב המטבח בגובה מלא, ויורד בעיבוד מפל אל הרצפה בקצה השני — אותה אבן, אותו כיוון עורק, לאורך כל המטבח.',
-      'המקרר והתנורים בגימור שחור נטמעים בקו הארונות בהתקנת קו אפס, בלי בליטה ובלי מרווח. גומחת עץ מוארת נפתחת בין המכשירים ומשמשת גם לתצוגה וגם לתאורת עבודה רכה בערב.',
-    ],
-    [
-      { label: 'חזיתות', value: 'לכה בגימור מבריק, גוון שמנת' },
-      { label: 'משטח וגב', value: 'שיש קלקטה עם עורק זהוב' },
-      { label: 'אי', value: 'חיפוי עץ אגוז, מפל אבן בקצה' },
-      { label: 'פרזול', value: 'ללא ידיות, פתיחה בפרופיל שקוע' },
-      { label: 'מכשירים', value: 'שחור, התקנת קו אפס' },
-    ],
-    [
-      ['מבט כללי על המטבח והאי', 'calacatta-1.webp'],
-      ['פינת הכיור וגב הקלקטה', 'calacatta-2.webp'],
-      ['האי בחיפוי אגוז ומפל הקלקטה', 'calacatta-3.webp'],
-    ].map(([alt, file]) => [file, alt] as [string, string]),
-    'calacatta-1.webp',
     'wide',
   ),
 
@@ -336,6 +314,11 @@ export const kitchenProjects: Project[] = [
       ['המטבח והסלון כחלל אחד', '3-4.webp'],
     ].map(([alt, file]) => [file, alt] as [string, string]),
     '3-1.webp',
+    undefined,
+    [
+      { label: 'צילום', value: 'מאור מויאל' },
+      { label: 'עיצוב', value: 'רווית אוסקר' },
+    ],
   ),
 
   build(
@@ -423,6 +406,11 @@ export const kitchenProjects: Project[] = [
       ['תקריב הידית העגולה והחזית המחורצת', '6-4.webp'],
     ].map(([alt, file]) => [file, alt] as [string, string]),
     '6-1.webp',
+    undefined,
+    [
+      { label: 'צילום', value: 'מאור מויאל' },
+      { label: 'עיצוב', value: 'רווית אוסקר' },
+    ],
   ),
 ];
 
@@ -432,11 +420,10 @@ export const projectBySlug = (slug: string) =>
 
 /** Hero slideshow — the strongest wide frames, ordered. */
 export const heroSlides = [
-  { url: '/images/hero-0.webp', alt: 'מטבחי דניאל — נגרייה למטבחי יוקרה' },
-  { url: '/images/stone-1.webp', alt: 'מטבח אבן כהה עם אי מונוליטי' },
+  { url: '/images/hero-stone-1.webp', alt: 'מטבח אבן כהה עם אי מונוליטי' },
   { url: '/images/smoked-1.webp', alt: 'מטבח בגוון אפור מעושן מט' },
-  { url: '/images/vintage-1.webp', alt: 'מטבח וינטג׳ בגוון זית עם פרזול פליז' },
-  { url: '/images/calacatta-1.webp', alt: 'מטבח קלקטה עם אי בחיפוי אגוז' },
+  { url: '/images/hero-vintage-1.webp', alt: 'מטבח וינטג׳ בגוון זית עם פרזול פליז' },
+  { url: '/images/hero-rustic-1.webp', alt: 'מטבח שחור מט עם אי בחיפוי עץ' },
 ];
 
 export const totalProjectImages = kitchenProjects.reduce((n, p) => n + p.images.length, 0);

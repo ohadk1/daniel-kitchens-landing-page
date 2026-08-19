@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: 'he_IL',
     url: site.url,
     siteName: site.name,
-    images: [{ url: '/images/hero.webp', width: 1920, height: 1044, alt: site.tagline }],
+    images: [{ url: '/images/hero-0.webp', width: 1536, height: 864, alt: site.tagline }],
   },
   robots: { index: true, follow: true },
 };
@@ -52,7 +52,7 @@ const jsonLd = {
   legalName: site.legalName,
   description: site.description,
   url: site.url,
-  image: `${site.url}/images/hero.webp`,
+  image: `${site.url}/images/hero-0.webp`,
   logo: `${site.url}/logo-main.png`,
   foundingDate: String(site.foundedYear),
   email: contact.email,
