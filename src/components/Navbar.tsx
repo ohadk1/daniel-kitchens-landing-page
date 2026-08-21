@@ -14,6 +14,7 @@ import { ChevronDown, Mail, Menu, Phone, Printer, X } from 'lucide-react';
 import { contact, navLinks, whatsappUrl } from '@/data/site';
 import { easeOutExpo } from '@/lib/animations';
 import { useStillMotion } from '@/lib/useStillMotion';
+import { FacebookGlyph, InstagramGlyph, socialLabels } from './SocialGlyphs';
 
 /** Matches the `lg:` breakpoint the desktop nav switches at. */
 const DESKTOP_QUERY = '(min-width: 1024px)';
@@ -33,6 +34,11 @@ const contactRows: ContactRow[] = [
 ];
 
 const sectionIds = navLinks.map((l) => l.href.replace('/#', ''));
+
+const socialProfiles = [
+  { href: contact.social.facebook, label: socialLabels.facebook, Glyph: FacebookGlyph },
+  { href: contact.social.instagram, label: socialLabels.instagram, Glyph: InstagramGlyph },
+] as const;
 
 function WhatsAppGlyph({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -227,30 +233,63 @@ export default function Navbar() {
           /* Wraps instead of clipping once the a11y widget scales the root font (1.4.4). */
           className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-1 sm:px-6 lg:px-8"
         >
-          <a
-            href="/"
-            aria-label="מטבחי דניאל - חזרה לדף הבית"
-            className={`flex shrink-0 items-center transition-all duration-300 ${
-              scrolled ? 'h-16' : 'h-20'
-            }`}
-          >
-            <Image
-              src="/logo-main.png"
-              alt="מטבחי דניאל - לוגו"
-              width={957}
-              height={356}
-              sizes="150px"
-              /* Above the fold: no preload (the hero owns that), but no lazy pop-in either. */
-              loading="eager"
-              /* The logo artwork is solid black on transparent — invert it to white while the
-                 bar floats over the dark hero, keep it black once the beige bar kicks in. */
-              className={`w-auto transition-all duration-300 ${
-                scrolled
-                  ? 'h-10'
-                  : 'h-12 brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]'
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <a
+              href="/"
+              aria-label="מטבחי דניאל - חזרה לדף הבית"
+              className={`flex shrink-0 items-center transition-all duration-300 ${
+                scrolled ? 'h-16' : 'h-20'
+              }`}
+            >
+              <Image
+                src="/logo-main.png"
+                alt="מטבחי דניאל - לוגו"
+                width={957}
+                height={356}
+                sizes="150px"
+                /* Above the fold: no preload (the hero owns that), but no lazy pop-in either. */
+                loading="eager"
+                /* The logo artwork is solid black on transparent — invert it to white while the
+                   bar floats over the dark hero, keep it black once the beige bar kicks in. */
+                className={`w-auto transition-all duration-300 ${
+                  scrolled
+                    ? 'h-10'
+                    : 'h-12 brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]'
+                }`}
+              />
+            </a>
+
+            {/* Same two profiles as the footer, kept beside the logo. Hidden on the
+                narrowest phones, where they reappear inside the mobile panel. */}
+            <span
+              aria-hidden="true"
+              className={`hidden h-7 w-px transition-colors duration-300 sm:block ${
+                solid ? 'bg-kitchen-ink/20' : 'bg-white/30'
               }`}
             />
-          </a>
+            <ul className="hidden items-center gap-0.5 sm:flex">
+              {socialProfiles.map((profile) => (
+                <li key={profile.href}>
+                  <motion.a
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={profile.label}
+                    whileHover={reduced ? undefined : { scale: 1.1 }}
+                    whileTap={reduced ? undefined : { scale: 0.94 }}
+                    transition={{ duration: 0.2, ease: easeOutExpo }}
+                    className={`grid h-9 w-9 place-items-center rounded-full transition-colors duration-300 ${
+                      solid
+                        ? 'text-kitchen-ink/70 hover:bg-kitchen-ink/10 hover:text-kitchen-wood'
+                        : 'text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] hover:bg-white/15 hover:text-white'
+                    }`}
+                  >
+                    <profile.Glyph className="h-[18px] w-[18px]" />
+                  </motion.a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Desktop nav */}
           <ul className="hidden flex-wrap items-center gap-x-1 gap-y-0.5 lg:flex">
@@ -457,6 +496,24 @@ export default function Navbar() {
                             צור קשר
                           </p>
                           <ContactList tone="dark" onNavigate={() => closeMobile(false)} />
+
+                          {/* The header pair is hidden at this width, so it lives here too. */}
+                          <ul className="mt-5 flex items-center gap-3 px-3">
+                            {socialProfiles.map((profile) => (
+                              <li key={profile.href}>
+                                <a
+                                  href={profile.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={profile.label}
+                                  onClick={() => closeMobile(false)}
+                                  className="grid h-11 w-11 place-items-center rounded-full border border-white/20 text-white/80 transition-colors duration-300 hover:border-kitchen hover:text-kitchen"
+                                >
+                                  <profile.Glyph />
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                         </motion.div>
 
                         <motion.a
