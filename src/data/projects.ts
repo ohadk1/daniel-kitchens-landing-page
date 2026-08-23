@@ -174,14 +174,14 @@ export const kitchenProjects: Project[] = [
       { label: 'תאורה', value: 'מסילה שחורה ו-LED חם נסתר' },
     ],
     [
-      ['המטבח והאי במבט מהסלון', 'smoked-1.webp'],
-      ['קיר הארונות והגומחה המוארת', 'smoked-2.webp'],
-      ['מפל השיש של האי מצד הסלון', 'smoked-3.webp'],
-      ['האי, טור המכשירים ומסילת התאורה', 'smoked-4.webp'],
-      ['מבט לאורך המטבח אל החלון', 'smoked-5.webp'],
-      ['המטבח והאי מעבר לספה', 'smoked-6.webp'],
+      ['המטבח והאי במבט מהסלון', 'smoked-1-v2.webp'],
+      ['קיר הארונות והגומחה המוארת', 'smoked-2-v2.webp'],
+      ['מפל השיש של האי מצד הסלון', 'smoked-3-v2.webp'],
+      ['האי, טור המכשירים ומסילת התאורה', 'smoked-4-v2.webp'],
+      ['מבט לאורך המטבח אל החלון', 'smoked-5-v2.webp'],
+      ['המטבח והאי מעבר לספה', 'smoked-6-v2.webp'],
     ].map(([alt, file]) => [file, alt] as [string, string]),
-    'smoked-1.webp',
+    'smoked-1-v2.webp',
     'wide',
   ),
 
@@ -424,7 +424,7 @@ export const projectBySlug = (slug: string) =>
 /** Hero slideshow — the strongest wide frames, ordered. */
 export const heroSlides = [
   { url: '/images/hero-stone-1.webp', alt: 'מטבח אבן כהה עם אי מונוליטי' },
-  { url: '/images/smoked-1.webp', alt: 'מטבח בגוון אפור מעושן מט עם אי שיש בהיר' },
+  { url: '/images/smoked-1-v2.webp', alt: 'מטבח בגוון אפור מעושן מט עם אי שיש בהיר' },
   { url: '/images/hero-vintage-1.webp', alt: 'מטבח וינטג׳ בגוון זית עם פרזול פליז' },
   { url: '/images/hero-rustic-1.webp', alt: 'מטבח שחור מט עם אי בחיפוי עץ' },
 ];
